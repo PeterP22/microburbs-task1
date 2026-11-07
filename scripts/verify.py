@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import shutil
+import struct
 import subprocess
 import sys
 from html.parser import HTMLParser
@@ -16,6 +17,7 @@ SKIP_DIRS = {".git", "__pycache__", ".cursor"}
 ALLOWED_FILES = {
     "README.md", "report.html", "AGENTS.md", "CHECK_PLAN.md", "VERIFICATION.md",
     ".gitignore", "scripts/verify.py", "demo.mp4", "pitch.mp4",
+    "docs/pipeline.png", "docs/pipeline.tldraw.json",
 }
 PREEXISTING_PRIVATE = {"API_DATA.json"}
 FORBIDDEN_NAME = re.compile(
@@ -24,8 +26,14 @@ FORBIDDEN_NAME = re.compile(
 )
 
 README_HEADINGS = [
-    "What we built", "Who it helps", "Data", "Claim ledger", "The clever step",
-    "Excluded on purpose", "Assets status", "How to run", "Limits",
+    "What we built", "Who it helps", "Data", "How to run", "Status",
+]
+README_PHRASES = [
+    "PENDING",
+    "human-led",
+    "not built",
+    "report.html",
+    "docs/pipeline.png",
 ]
 AGENTS_REQUIRED = ["python3 scripts/verify.py", "--allow-pending", "python3 -m http.server"]
 REPORT_HEADINGS = [
@@ -181,7 +189,9 @@ def check_inventory(r, files):
             continue
         if f not in ALLOWED_FILES:
             r.check(False, f"inventory: unexpected file {f}")
-        if FORBIDDEN_NAME.search(Path(f).name) and f not in PREEXISTING_PRIVATE:
+        if (FORBIDDEN_NAME.search(Path(f).name)
+                and f not in PREEXISTING_PRIVATE
+                and f not in ALLOWED_FILES):
             r.check(False, f"inventory: forbidden file name {f}")
     r.check(True, f"inventory: {len(files)} files scanned against allowlist")
 
@@ -191,10 +201,26 @@ def check_markdown(r):
     heads = md_headings(readme)
     for h in README_HEADINGS:
         r.check(any(h.lower() in x.lower() for x in heads), f"README heading: {h}")
-    for p in REQUIRED_PHRASES:
+    for p in README_PHRASES:
         r.check(p.lower() in readme.lower(), f"README phrase: {p}")
     for p in COLLABORATOR_PHRASES:
         r.check(p in readme, f"README preserves collaborator note: {p}")
+    for m in re.finditer(r"!\[([^\]]*)\]\(([^)]+)\)", readme):
+        alt, href = m.group(1).strip(), m.group(2).strip()
+        r.check(len(alt) >= 40, "README pipeline image has meaningful alt text")
+        r.check(not re.match(r"^(https?:)?//", href), f"README image is relative: {href}")
+        exists = (ROOT / href).is_file()
+        r.check(exists, f"README image resolves: {href}")
+        if href.lower().endswith(".png") and exists:
+            data = (ROOT / href).read_bytes()
+            r.check(data[:8] == b"\x89PNG\r\n\x1a\n", f"README image is PNG: {href}")
+            w, h = struct.unpack(">II", data[16:24])
+            r.check(w >= 800 and h >= 800, f"README PNG dimensions {w}x{h}")
+    for m in re.finditer(r"\[([^\]]+)\]\(([^)]+)\)", readme):
+        href = m.group(2).strip()
+        if re.match(r"^(https?:)?//", href) or href.startswith("#") or href.startswith("mailto:"):
+            continue
+        r.check((ROOT / href).is_file(), f"README relative link resolves: {href}")
     agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
     for c in AGENTS_REQUIRED:
         r.check(c in agents, f"AGENTS.md mentions: {c}")
@@ -240,21 +266,29 @@ def check_numbers(r, label, text):
 
 def check_wording(r, readme, report_text):
     blob = readme + "\n" + report_text
-    r.check("94" in blob and "91.0" in blob, "wording: both 94 and 91.0 present")
-    r.check("not a passed validation" in blob.lower() or "unresolved, not validated" in blob.lower(),
+    r.check("94" in report_text and "91.0" in report_text,
+            "wording: report keeps both 94 and 91.0")
+    r.check("94" not in readme and "91.0" not in readme,
+            "wording: README does not headline the unresolved scores")
+    r.check("report.html" in readme, "wording: README points to report.html for evidence")
+    r.check("human-led" in readme.lower(), "wording: README says work is human-led today")
+    r.check("not built" in readme.lower(), "wording: README marks calendar/feedback as not built")
+    r.check("virality" in readme.lower() and ("not" in readme.lower() or "not guaranteed" in readme.lower()),
+            "wording: README treats virality as a goal, not a guarantee")
+    r.check("not a passed validation" in report_text.lower() or "unresolved, not validated" in report_text.lower(),
             "wording: contradictory score marked unresolved, not validated")
     r.check("working content engine" in readme.lower() and "not" in readme.lower(),
             "wording: no claim that a content engine exists")
-    r.check("original music" in blob.lower() and "jono" in blob.lower(),
-            "wording: v11 notes original music and Jono narration")
-    r.check("map" in blob.lower() and "cathedral" in blob.lower(),
+    r.check("original music" in report_text.lower() and "jono" in report_text.lower(),
+            "wording: report keeps original music and Jono narration")
+    r.check("map" in report_text.lower() and "cathedral" in report_text.lower(),
             "wording: map instead of generated cathedral is documented")
     r.check("present" in blob.lower() and "pending" in blob.lower(),
             "wording: files PRESENT and final user approval PENDING")
-    r.check("no disputed 94" in blob.lower() or "omits the exact score" in blob.lower()
-            or "omit the exact score" in blob.lower(),
+    r.check("no disputed 94" in report_text.lower() or "omits the exact score" in report_text.lower()
+            or "omit the exact score" in report_text.lower(),
             "wording: videos omit disputed exact score")
-    r.check("not visual/audio qa" in blob.lower() or "not visual/audio QA" in blob,
+    r.check("not visual/audio qa" in report_text.lower() or "not visual/audio QA" in report_text,
             "wording: ffprobe is not visual/audio QA")
     bad = []
     if re.search(r"\b94 is (the )?correct\b", blob, re.I):
@@ -273,7 +307,7 @@ def check_secrets(r, files):
         if f in PREEXISTING_PRIVATE:
             continue
         path = ROOT / f
-        if path.suffix == ".mp4":
+        if path.suffix.lower() in {".mp4", ".png"}:
             continue
         try:
             text = path.read_text(encoding="utf-8")
