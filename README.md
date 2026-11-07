@@ -1,7 +1,7 @@
 # Where to Go for a Running Date
 
 We use Microburbs data to find Sydney neighbourhoods that are better suited to running dates.
-Watch our reel from [here](https://www.instagram.com/reel/DfbTA9tvH8t/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==)
+Watch our reel from [here🔗](https://www.instagram.com/reel/DfbTA9tvH8t/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==)
 
 [Read the report](report.html) · [Strategy](docs/STRATEGY.md) · [Concept and methods](docs/CONCEPT.md) · [35 candidate hooks](docs/hook-bank.md)
 
