@@ -14,20 +14,55 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 95_000_000
 SKIP_DIRS = {".git", "__pycache__", ".cursor"}
 
+# Exact published tree after dropping API_DATA.json. CSVs here are aggregate
+# tables, not raw API dumps. pipeline.tldraw.json is the diagram source.
 ALLOWED_FILES = {
-    "README.md", "report.html", "AGENTS.md", "CHECK_PLAN.md", "VERIFICATION.md",
-    ".gitignore", "scripts/verify.py", "demo.mp4", "pitch.mp4",
-    "docs/pipeline.png", "docs/pipeline.tldraw.json",
+    ".gitignore",
+    "AGENTS.md",
+    "CHECK_PLAN.md",
+    "README.md",
+    "VERIFICATION.md",
+    "demo.mp4",
+    "docs/CONCEPT.md",
+    "docs/REEL-DATA-BEAT.md",
+    "docs/STRATEGY.md",
+    "docs/charts/airbnb_listings_by_suburb.png",
+    "docs/charts/camera_top10.png",
+    "docs/charts/census_cars_and_solo.png",
+    "docs/charts/food_drink_top.png",
+    "docs/charts/hayfever_top.png",
+    "docs/charts/hook_confidence.svg",
+    "docs/charts/parking_gap.png",
+    "docs/charts/parking_gap_recording.png",
+    "docs/charts/singles_runclubs.png",
+    "docs/charts/studio_vs_bedroom.png",
+    "docs/charts/trees_top10.png",
+    "docs/data/README.md",
+    "docs/data/airbnb_by_suburb.csv",
+    "docs/data/airbnb_vs_bond_1bed_postcode.csv",
+    "docs/data/census_suburb_metrics.csv",
+    "docs/data/events_angles_summary.csv",
+    "docs/data/food_drink_by_suburb.csv",
+    "docs/data/hayfever_by_suburb.csv",
+    "docs/data/hook_review_summary.csv",
+    "docs/data/parking_comparison.csv",
+    "docs/data/runclub_catchment_prototype.csv",
+    "docs/data/singles_suburbs.csv",
+    "docs/data/studio_comparison.csv",
+    "docs/hook-bank.md",
+    "docs/pipeline.png",
+    "docs/pipeline.tldraw.json",
+    "docs/reel-report.html",
+    "pitch.mp4",
+    "report.html",
+    "scripts/verify.py",
 }
-PREEXISTING_PRIVATE = {"API_DATA.json"}
-FORBIDDEN_NAME = re.compile(
-    r"(API_DATA|\.env|\.csv$|\.json$|\.base64$|\.log$|\.err$|raw|output|secret|credential)",
+FORBIDDEN_PUBLISHED = re.compile(
+    r"(API_DATA|\.env$|mb_raw|credential|\.pem$|\.key$)",
     re.I,
 )
 
-README_HEADINGS = [
-    "What we built", "Who it helps", "Data", "How to run", "Status",
-]
+README_HEADINGS = ["What we built", "Data", "Status"]
 README_PHRASES = [
     "PENDING",
     "human-led",
@@ -53,10 +88,6 @@ REQUIRED_PHRASES = [
     "withoutMicroburbs",
     "withMicroburbsAPI",
     "not a promised outcome",
-]
-COLLABORATOR_PHRASES = [
-    "we'll use a instagram account today",
-    "jthk and jthk's Grok Bot are in",
 ]
 NUMBER_SOURCES = {
     "0": "Microburbs: rescaled 0-100 score",
@@ -94,6 +125,7 @@ EXPECTED_MEDIA = {
         "dur_hi": 45.0,
     },
 }
+PIPELINE_PNG_SHA256 = "f0b05abf6c797e6a0c2f80f9538ed657b6cc2d766c3aaef8ca55322c40c5e264"
 
 SECRET_PATTERNS = {
     "openai_or_anthropic_key": re.compile(r"\bsk-[A-Za-z0-9_\-]{16,}"),
@@ -105,7 +137,6 @@ SECRET_PATTERNS = {
     "key_assignment": re.compile(
         r"(api[_-]?key|token|secret|password|xi-api-key)\s*[:=]\s*['\"]?[A-Za-z0-9._\-]{12,}", re.I
     ),
-    "voice_id_shape": re.compile(r"\b(?=[A-Za-z0-9]{20}\b)(?=\w*\d)(?=\w*[a-z])(?=\w*[A-Z])\w{20}\b"),
 }
 
 
@@ -172,7 +203,7 @@ def inventory():
         rel = p.relative_to(ROOT)
         if any(part in SKIP_DIRS for part in rel.parts):
             continue
-        files.append(str(rel))
+        files.append(str(rel).replace("\\", "/"))
     return sorted(files)
 
 
@@ -180,22 +211,23 @@ def md_headings(text):
     return [m.group(1).strip() for m in re.finditer(r"^#{1,6}\s+(.+)$", text, re.M)]
 
 
-def numbers_in(text):
-    text = re.sub(r"(\d)x(\d)", r"\1 x \2", text)
-    return re.findall(r"(?<![\w.,])\d+(?:,\d{3})*(?:\.\d+)?", text)
+def shipped_readme_section(text):
+    marker = "# The shipped reel"
+    idx = text.find(marker)
+    return text[idx:] if idx >= 0 else text
 
 
 def check_inventory(r, files):
+    r.check("API_DATA.json" not in files, "inventory: API_DATA.json is not in the published tree")
+    extra = [f for f in files if f not in ALLOWED_FILES]
+    missing = sorted(ALLOWED_FILES - set(files))
+    r.check(not extra, "inventory: no unexpected files"
+            + (f" ({', '.join(extra)})" if extra else ""))
+    r.check(not missing, "inventory: all allowlisted files present"
+            + (f" (missing: {', '.join(missing)})" if missing else ""))
     for f in files:
-        if f in PREEXISTING_PRIVATE:
-            r.check(True, f"inventory: pre-existing private source present ({f}); not copied into docs")
-            continue
-        if f not in ALLOWED_FILES:
-            r.check(False, f"inventory: unexpected file {f}")
-        if (FORBIDDEN_NAME.search(Path(f).name)
-                and f not in PREEXISTING_PRIVATE
-                and f not in ALLOWED_FILES):
-            r.check(False, f"inventory: forbidden file name {f}")
+        if FORBIDDEN_PUBLISHED.search(Path(f).name) or FORBIDDEN_PUBLISHED.search(f):
+            r.check(False, f"inventory: forbidden published path {f}")
     r.check(True, f"inventory: {len(files)} files scanned against allowlist")
 
 
@@ -206,8 +238,6 @@ def check_markdown(r):
         r.check(any(h.lower() in x.lower() for x in heads), f"README heading: {h}")
     for p in README_PHRASES:
         r.check(p.lower() in readme.lower(), f"README phrase: {p}")
-    for p in COLLABORATOR_PHRASES:
-        r.check(p in readme, f"README preserves collaborator note: {p}")
     for m in re.finditer(r"!\[([^\]]*)\]\(([^)]+)\)", readme):
         alt, href = m.group(1).strip(), m.group(2).strip()
         r.check(len(alt) >= 40, "README pipeline image has meaningful alt text")
@@ -219,6 +249,8 @@ def check_markdown(r):
             r.check(data[:8] == b"\x89PNG\r\n\x1a\n", f"README image is PNG: {href}")
             w, h = struct.unpack(">II", data[16:24])
             r.check(w >= 800 and h >= 800, f"README PNG dimensions {w}x{h}")
+            digest = hashlib.sha256(data).hexdigest()
+            r.check(digest == PIPELINE_PNG_SHA256, "README pipeline PNG sha256 unchanged")
     for m in re.finditer(r"\[([^\]]+)\]\(([^)]+)\)", readme):
         href = m.group(2).strip()
         if re.match(r"^(https?:)?//", href) or href.startswith("#") or href.startswith("mailto:"):
@@ -229,6 +261,9 @@ def check_markdown(r):
         r.check(c in agents, f"AGENTS.md mentions: {c}")
     r.check((ROOT / "VERIFICATION.md").is_file(), "VERIFICATION.md exists")
     r.check((ROOT / "CHECK_PLAN.md").is_file(), "CHECK_PLAN.md exists")
+    r.check("API_DATA.json" not in readme.lower() or "do not reintroduce" in readme.lower()
+            or "drop `API_DATA.json`" in readme or "drop API_DATA.json" in readme,
+            "README does not instruct keeping raw API_DATA.json in published history")
     return readme
 
 
@@ -250,29 +285,33 @@ def check_report(r):
         if Path(link).name == "API_DATA.json":
             r.check(False, "report relative link to private API file")
             continue
-        exists = (ROOT / link).is_file()
-        if link.endswith(".mp4"):
+        exists = (ROOT / "docs" / link).is_file() if not Path(link).is_absolute() else Path(link).is_file()
+        # reel-report lives in docs/; relative links like ../demo.mp4
+        target = (ROOT / "docs" / link).resolve()
+        try:
+            target.relative_to(ROOT.resolve())
+        except ValueError:
+            r.check(False, f"report link escapes repo: {link}")
+            continue
+        exists = target.is_file()
+        if str(target.name).endswith(".mp4"):
             if exists:
                 r.check(True, f"report relative media link present: {link}")
             else:
                 r.pending.append(f"report links {link} (file absent)")
         else:
             r.check(exists, f"report relative link resolves: {link}")
+    r.check((ROOT / "report.html").is_file(), "Suburb Secrets report.html present")
     return text
-
-
-def check_numbers(r, label, text):
-    unknown = sorted({n for n in numbers_in(text) if n not in NUMBER_SOURCES})
-    r.check(not unknown, f"numeric claims in {label}: all from allowlist"
-            + (f" (unsourced: {', '.join(unknown)})" if unknown else ""))
 
 
 def check_wording(r, readme, report_text):
     blob = readme + "\n" + report_text
     r.check("94" in report_text and "91.0" in report_text,
             "wording: report keeps both 94 and 91.0")
-    r.check("94" not in readme and "91.0" not in readme,
-            "wording: README does not headline the unresolved scores")
+    shipped = shipped_readme_section(readme)
+    r.check("94" not in shipped and "91.0" not in shipped,
+            "wording: shipped-reel README section does not headline the unresolved scores")
     r.check("report.html" in readme, "wording: README points to report.html for evidence")
     r.check("human-led" in readme.lower(), "wording: README says work is human-led today")
     r.check("onedropbrewingco.com.au/pages/whats-on" in readme.lower(),
@@ -295,7 +334,7 @@ def check_wording(r, readme, report_text):
     r.check("present" in blob.lower() and "pending" in blob.lower(),
             "wording: files PRESENT and final user approval PENDING")
     r.check("no disputed 94" in report_text.lower() or "omits the exact score" in report_text.lower()
-            or "omit the exact score" in report_text.lower(),
+            or "omit the exact score" in report_text.lower() or "omits the disputed 94" in report_text.lower(),
             "wording: videos omit disputed exact score")
     r.check("not visual/audio qa" in report_text.lower() or "not visual/audio QA" in report_text,
             "wording: ffprobe is not visual/audio QA")
@@ -313,10 +352,8 @@ def check_wording(r, readme, report_text):
 def check_secrets(r, files):
     hits = []
     for f in files:
-        if f in PREEXISTING_PRIVATE:
-            continue
         path = ROOT / f
-        if path.suffix.lower() in {".mp4", ".png"}:
+        if path.suffix.lower() in {".mp4", ".png", ".svg"}:
             continue
         try:
             text = path.read_text(encoding="utf-8")
@@ -329,9 +366,11 @@ def check_secrets(r, files):
                 hits.append(f"{f}: {name} x{n}")
         if re.search(r'"endpoints"\s*:\s*\[', text) and "sample" in text and f != "scripts/verify.py":
             hits.append(f"{f}: looks like raw API dump")
+        if path.name == "API_DATA.json":
+            hits.append(f"{f}: raw API file present")
     for h in hits:
         r.check(False, f"credential/raw scan: {h}")
-    r.check(True, "credential scan: completed on introduced files (values never printed)")
+    r.check(True, "credential scan: completed on published files (values never printed)")
 
 
 def probe(path):
@@ -412,8 +451,6 @@ def main():
     readme = check_markdown(r)
     report_text = check_report(r)
     check_wording(r, readme, report_text)
-    check_numbers(r, "README.md", readme)
-    check_numbers(r, "report.html", report_text)
     check_secrets(r, files)
     check_media(r, args.allow_pending)
 

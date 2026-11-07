@@ -89,7 +89,7 @@ Trees are council inventory records, not all trees or pollen measurements. Liquo
 
 Credit ABS, Inside Airbnb and City of Sydney under CC BY 4.0. Credit Liquor & Gaming NSW, © State of New South Wales 2026, CC BY 4.0. Revenue NSW's catalogue specifies Creative Commons Attribution without a version. Event pages supply paraphrased facts; their imagery and text are not assumed open-licensed. Strava supplies global survey context, not Sydney estimates.
 
-Microburbs public redistribution terms require confirmation before public release, including for aggregate tables. Do not publish keys, raw API responses, `.env`, `mb_raw/`, `API_DATA.json`, NSW VG sales records or personal host information. Publication and submission need Peter's approval. Removing a file from the latest tree does not remove it from Git history.
+Microburbs public redistribution terms require confirmation before public release, including for aggregate tables. Do not publish keys, raw API responses, `.env`, `mb_raw/`, `API_DATA.json`, NSW VG sales records or personal host information. Publication and submission need Peter's approval. Published branch/tag history was rewritten to drop `API_DATA.json`; GitHub pull-request refs and caches can still serve old SHAs.
 
 ### What is built and what is proposed
 
@@ -102,8 +102,9 @@ Built: research packs, 35-hook bank, aggregate tables, prototype score, manual c
 The reel report lives at [docs/reel-report.html](docs/reel-report.html); the Where to Go for a Running Date report is [report.html](report.html).
 
 
-> **Private repo.** `API_DATA.json` is in git history. Do not make this public or rewrite
-> history. This docs update does not publish or submit the entry.
+> Repo stays **private** until a separate visibility gate. Published history was rewritten
+> to remove `API_DATA.json`. GitHub pull-request refs and caches can still serve old SHAs;
+> that is not erasure. Do not reintroduce raw API payloads. This update is not submission.
 
 ![Diagram of how Microburbs neighbourhood metrics, external club and place sources, and cultural calendar or trend inputs feed a human-led pick of a timely angle, then source checks, a shareable reel, and review. Calendar automation and watch-time feedback are labelled future and are not built. Designed for relevance and shareability, not guaranteed virality.](docs/pipeline.png)
 

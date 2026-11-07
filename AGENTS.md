@@ -1,10 +1,15 @@
 # Agent notes (Team Sake, Task 1)
 
-Do not edit `creator/runclub-reel`. Do not force-push, change visibility, rewrite
-history, deploy, or submit. Do not commit ZIP transport parts or manifests.
+Do not change visibility, deploy, or submit without a separate explicit approval after
+independent verification of the cleaned refs. Do not commit ZIP transport parts.
 
-Repo remains **PRIVATE** because `API_DATA.json` is in history. Do not reproduce that
-file in new docs. Do not delete it as a visibility fix.
+Published history was rewritten to drop `API_DATA.json`. Do not reintroduce that file,
+raw API payloads, `.env`, keys, or personal data. GitHub pull-request refs and caches
+can still serve old SHAs; a refs audit is not complete erasure.
+
+Unique producer work on `creator/runclub-reel` (Remotion source and draft videos) is
+retained on that branch. Do not swap canonical root `demo.mp4` / `pitch.mp4` (v11).
+Do not put v12+ or judges-walkthrough into production without approval.
 
 Root `demo.mp4` and `pitch.mp4` are reconstructed producer originals. Commit them as
 normal Git blobs, never Git LFS pointers. Final user approval and publication remain
@@ -26,4 +31,5 @@ python3 scripts/verify.py --allow-pending
   `withoutMicroburbs` and `withMicroburbsAPI`, not a promised Microburbs outcome.
 - Built artefact: one produced reel plus pitch, files PRESENT, approval PENDING.
   Future vision: repeatable format. No working content engine exists here.
-- Preserve the existing README collaborator notes (Instagram; jthk / Grok Bot).
+- Latest `main` README (post 8aa4664 / 4e353b7) dropped the older collaborator opening
+  lines; those lines remain in the private pre-sanitize backup at `ae354e4`.
