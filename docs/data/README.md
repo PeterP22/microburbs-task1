@@ -1,0 +1,1 @@
+Small aggregated tables only (medians, counts, percentages by suburb or postcode). No raw listings, addresses or API responses. `runclub_catchment_prototype.csv` is illustrative; weights are unvalidated.

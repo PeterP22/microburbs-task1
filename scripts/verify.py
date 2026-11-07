@@ -230,7 +230,7 @@ def check_markdown(r):
 
 
 def check_report(r):
-    html = (ROOT / "report.html").read_text(encoding="utf-8")
+    html = (ROOT / "docs/reel-report.html").read_text(encoding="utf-8")
     p = ReportParser()
     p.feed(html)
     for h in REPORT_HEADINGS:

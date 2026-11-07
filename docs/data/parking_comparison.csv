@@ -1,0 +1,56 @@
+suburb,car_spaces,median,size
+Alexandria,0.0,720.0,177
+Alexandria,1.0,750.0,143
+Barangaroo,0.0,1350.0,23
+Barangaroo,1.0,1550.0,4
+Beaconsfield (NSW),0.0,710.0,4
+Beaconsfield (NSW),1.0,800.0,6
+Camperdown (NSW),0.0,700.0,123
+Camperdown (NSW),1.0,780.0,245
+Centennial Park (NSW),0.0,625.0,37
+Centennial Park (NSW),1.0,675.0,75
+Chippendale,0.0,850.0,282
+Chippendale,1.0,950.0,168
+Darlinghurst,0.0,660.0,381
+Darlinghurst,1.0,882.5,182
+Darlington (Sydney - NSW),0.0,550.0,12
+Darlington (Sydney - NSW),1.0,650.0,11
+Dawes Point,1.0,950.0,1
+Elizabeth Bay,0.0,650.0,222
+Elizabeth Bay,1.0,795.0,101
+Erskineville,0.0,750.0,129
+Erskineville,1.0,785.0,124
+Eveleigh,0.0,795.0,1
+Eveleigh,1.0,740.0,6
+Forest Lodge,0.0,790.0,134
+Forest Lodge,1.0,800.0,51
+Glebe (NSW),0.0,650.0,161
+Glebe (NSW),1.0,690.0,134
+Haymarket,0.0,970.0,207
+Haymarket,1.0,987.5,68
+Millers Point,0.0,850.0,33
+Millers Point,1.0,1000.0,23
+Potts Point,0.0,692.5,460
+Potts Point,1.0,895.0,118
+Pyrmont,0.0,700.0,67
+Pyrmont,1.0,750.0,209
+Redfern,0.0,700.0,149
+Redfern,1.0,780.0,128
+Rosebery (NSW),0.0,782.5,186
+Rosebery (NSW),1.0,800.0,140
+Rushcutters Bay,0.0,605.0,114
+Rushcutters Bay,1.0,772.5,46
+Surry Hills,0.0,750.0,453
+Surry Hills,1.0,805.0,314
+Sydney,0.0,825.0,616
+Sydney,1.0,880.0,212
+The Rocks (Sydney - NSW),0.0,1000.0,13
+The Rocks (Sydney - NSW),1.0,1100.0,11
+Ultimo,0.0,650.0,256
+Ultimo,1.0,800.0,109
+Waterloo (NSW),0.0,800.0,294
+Waterloo (NSW),1.0,800.0,204
+Woolloomooloo,0.0,750.0,97
+Woolloomooloo,1.0,850.0,56
+Zetland,0.0,850.0,342
+Zetland,1.0,870.0,169
