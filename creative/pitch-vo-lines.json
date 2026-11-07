@@ -1,0 +1,7 @@
+["Is your run club the new Love Island?",
+"Strava's 2024 Year in Sport survey found nearly one in five Gen Z respondents had dated someone they met through exercise. That's a global survey, about exercise overall.",
+"So we mapped 13 Sydney run clubs from public sources, and flagged the ones that meet outside the City of Sydney, like Bondi and Bronte.",
+"Here's how the data moves: public club pages into one sourced table,",
+"onto a map, into a short vertical reel.",
+"What we don't claim: no love-odds score, and no local Microburbs demographic finding, because API access was blocked from our build machine.",
+"Every figure has a source in the README. Thanks."]
