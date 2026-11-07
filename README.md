@@ -1,4 +1,4 @@
-# Suburb Secrets
+# Where to Go for a Running Date
 
 We built an engine that turns Microburbs data and open data into timely, shareable insights into Sydney's suburbs, culture and life. Our first reel asks: *Is your run club the new Love Island?*
 
@@ -99,7 +99,7 @@ Built: research packs, 35-hook bank, aggregate tables, prototype score, manual c
 
 # The shipped reel: Are run clubs the new Love Island? (Team Sake)
 
-The reel report lives at [docs/reel-report.html](docs/reel-report.html); the Suburb Secrets report is [report.html](report.html).
+The reel report lives at [docs/reel-report.html](docs/reel-report.html); the Where to Go for a Running Date report is [report.html](report.html).
 
 
 > **Private repo.** `API_DATA.json` is in git history. Do not make this public or rewrite
@@ -121,11 +121,6 @@ or trend inputs into a timely, relevant, shareable video. A **repeatable** cultu
 feed and a watch-time feedback loop are **future vision, not built**. Virality is a design
 goal, not a guaranteed or measured result.
 
-## Who it helps
-
-People new to Sydney who will watch a short dating-culture reel more readily than a dry
-suburb profile. General public education only. No personal dating advice.
-
 ## Data
 
 Illustrative social-club example (not the subject of the existing v11 video):
@@ -134,16 +129,6 @@ Botany is a different place from the Surry Hills lifestyle metric used in the le
 not join them. Frozen v11 media is unchanged and is documented in [report.html](docs/reel-report.html)
 (including that video's original club evidence). An API figure and a public ranking page
 disagree, so the exact score is omitted from the video and is not treated as settled.
-
-## How to run
-
-No app. Open [report.html](docs/reel-report.html), or:
-
-```sh
-python3 -m http.server 8000
-python3 scripts/verify.py
-python3 scripts/verify.py --allow-pending
-```
 
 ## Status
 
