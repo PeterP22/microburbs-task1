@@ -7,6 +7,7 @@ jthk and jthk's Grok Bot are in.
 
 ## Task 1 creative
 
+- Data flow: ![data flow](creative/data-flow.png)
 - Video flow: ![video flow](creative/video-flow.png)
 - Script: [creative/SCRIPT.md](creative/SCRIPT.md)
 - Instagram audit: [creative/ig-research.md](creative/ig-research.md)

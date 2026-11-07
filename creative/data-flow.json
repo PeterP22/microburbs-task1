@@ -1,0 +1,116 @@
+[
+  {
+    "_type": "text",
+    "shapeId": "title",
+    "x": 0,
+    "y": 0,
+    "text": "Task 1: from sources to one verified finding",
+    "size": "l",
+    "font": "sans"
+  },
+  {
+    "_type": "rectangle",
+    "shapeId": "micro",
+    "x": 0,
+    "y": 80,
+    "w": 360,
+    "h": 150,
+    "text": "Microburbs data\nApproved API access or\npermitted supplied export",
+    "color": "blue",
+    "font": "sans"
+  },
+  {
+    "_type": "rectangle",
+    "shapeId": "external",
+    "x": 440,
+    "y": 80,
+    "w": 360,
+    "h": 150,
+    "text": "External source\nCheck licence, geography\nand observation dates",
+    "color": "violet",
+    "font": "sans"
+  },
+  {
+    "_type": "rectangle",
+    "shapeId": "join",
+    "x": 210,
+    "y": 310,
+    "w": 380,
+    "h": 125,
+    "text": "Match location and period\nCheck boundaries and sample\nRecalculate every claim",
+    "color": "orange",
+    "font": "sans"
+  },
+  {
+    "_type": "rectangle",
+    "shapeId": "evidence",
+    "x": 210,
+    "y": 515,
+    "w": 380,
+    "h": 125,
+    "text": "Verified finding + evidence\nSource for every figure\nLimits and uncertainty",
+    "color": "green",
+    "font": "sans"
+  },
+  {
+    "_type": "rectangle",
+    "shapeId": "output",
+    "x": 210,
+    "y": 720,
+    "w": 380,
+    "h": 125,
+    "text": "Handoff to creator\nMap + comparison + captions\n15\u201345 second finished reel",
+    "color": "blue",
+    "font": "sans"
+  },
+  {
+    "_type": "text",
+    "shapeId": "note",
+    "x": 0,
+    "y": 900,
+    "text": "GitHub: decisions, methods, permitted evidence and screenshots.\nNever: keys, session details or organiser-only raw CSVs.\nCurrent status: API blocked; no verified market finding yet.",
+    "font": "sans",
+    "size": "s",
+    "color": "grey"
+  },
+  {
+    "_type": "arrow",
+    "shapeId": "a",
+    "fromId": "micro",
+    "toId": "join",
+    "x1": 180,
+    "y1": 230,
+    "x2": 320,
+    "y2": 310
+  },
+  {
+    "_type": "arrow",
+    "shapeId": "b",
+    "fromId": "external",
+    "toId": "join",
+    "x1": 620,
+    "y1": 230,
+    "x2": 480,
+    "y2": 310
+  },
+  {
+    "_type": "arrow",
+    "shapeId": "c",
+    "fromId": "join",
+    "toId": "evidence",
+    "x1": 400,
+    "y1": 435,
+    "x2": 400,
+    "y2": 515
+  },
+  {
+    "_type": "arrow",
+    "shapeId": "d",
+    "fromId": "evidence",
+    "toId": "output",
+    "x1": 400,
+    "y1": 640,
+    "x2": 400,
+    "y2": 720
+  }
+]
