@@ -1,0 +1,148 @@
+[
+ {
+  "_type": "text",
+  "shapeId": "t",
+  "x": 0,
+  "y": -90,
+  "text": "Task 1 video flow",
+  "size": "xl",
+  "font": "sans"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "a",
+  "x": 0,
+  "y": 0,
+  "w": 300,
+  "h": 160,
+  "color": "blue",
+  "font": "sans",
+  "text": "1. Verified finding\nMicroburbs + permitted\nexternal data\n(source choice pending)"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "b",
+  "x": 360,
+  "y": 0,
+  "w": 300,
+  "h": 160,
+  "color": "violet",
+  "font": "sans",
+  "text": "2. Hook + script\n3 hook options\nlock-in, rehooks"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "c",
+  "x": 720,
+  "y": 0,
+  "w": 300,
+  "h": 160,
+  "color": "orange",
+  "font": "sans",
+  "text": "3. Visuals\nRemotion animated map\none number per beat\n(Task1Reel)"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "d",
+  "x": 1080,
+  "y": 0,
+  "w": 300,
+  "h": 160,
+  "color": "green",
+  "font": "sans",
+  "text": "4. Peter's voiceover\n+ burned-in captions\nworks muted\nnever cover faces"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "e",
+  "x": 1080,
+  "y": 260,
+  "w": 300,
+  "h": 160,
+  "color": "red",
+  "font": "sans",
+  "text": "5. demo.mp4\n1080x1920, 15-45s\nplace + topic\nin first 3s"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "f",
+  "x": 720,
+  "y": 260,
+  "w": 300,
+  "h": 160,
+  "color": "light-red",
+  "font": "sans",
+  "text": "6. pitch.mp4\n(separate)"
+ },
+ {
+  "_type": "rectangle",
+  "shapeId": "g",
+  "x": 360,
+  "y": 260,
+  "w": 300,
+  "h": 160,
+  "color": "grey",
+  "font": "sans",
+  "text": "7. README\nsource credit\nper figure"
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "ab",
+  "fromId": "a",
+  "toId": "b",
+  "x1": 300,
+  "y1": 80,
+  "x2": 360,
+  "y2": 80
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "bc",
+  "fromId": "b",
+  "toId": "c",
+  "x1": 660,
+  "y1": 80,
+  "x2": 720,
+  "y2": 80
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "cd",
+  "fromId": "c",
+  "toId": "d",
+  "x1": 1020,
+  "y1": 80,
+  "x2": 1080,
+  "y2": 80
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "de",
+  "fromId": "d",
+  "toId": "e",
+  "x1": 1230,
+  "y1": 160,
+  "x2": 1230,
+  "y2": 260
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "ef",
+  "fromId": "e",
+  "toId": "f",
+  "x1": 1080,
+  "y1": 340,
+  "x2": 1020,
+  "y2": 340
+ },
+ {
+  "_type": "arrow",
+  "shapeId": "fg",
+  "fromId": "f",
+  "toId": "g",
+  "x1": 720,
+  "y1": 340,
+  "x2": 660,
+  "y2": 340
+ }
+]
