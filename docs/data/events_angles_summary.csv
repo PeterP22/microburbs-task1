@@ -1,0 +1,10 @@
+suburb,metric,value,unit,caveat
+Haymarket,birthplace_China,23.4,percent,census-based via Microburbs; reference year unconfirmed; top-10 countries only
+Haymarket,birthplace_Thailand,19.2,percent,census-based via Microburbs; reference year unconfirmed; top-10 countries only
+Haymarket,birthplace_Australia,14.2,percent,census-based via Microburbs; reference year unconfirmed; top-10 countries only
+Darlington,persons_age_20_24,27.0,percent,census-based via Microburbs; reference year unconfirmed
+Darlington,unit_median_rent_2026_10_25,725.0,AUD/week,Microburbs market/all; sample size undisclosed
+Darlington,unit_median_rent_2015_02_28,445,AUD/week,nominal historical median; changing property mix
+Darlington,unit_median_rent_change_2015_2026,62.9,percent,not inflation-adjusted; not a matched-home index
+Barangaroo,unit_median_rent_2026_10_25,2000.0,AUD/week,Microburbs market/all; sample size undisclosed
+Haymarket,unit_median_rent_2026_10_25,1200.0,AUD/week,Microburbs market/all; sample size undisclosed
