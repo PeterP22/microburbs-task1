@@ -21,7 +21,7 @@ for s in segs:
     for k in range(0,n,K):chunks.append(idx[k:k+K])
 for c in chunks:
     for p,wi in enumerate(c):
-        st=w[wi]["start"]; en=w[c[p+1]]["start"] if p+1<len(c) else w[wi]["end"]+0.25
+        st=w[wi]["start"]; en=w[c[p+1]]["start"] if p+1<len(c) else (min(w[wi]["end"]+0.25,w[wi+1]["start"]) if wi+1<len(w) else w[wi]["end"]+0.25)
         txt=" ".join(("{\\c&H5A78FF&}"+w[x]["word"].lower()+"{\\c&HFFFFFF&}") if x==wi else w[x]["word"].lower() for x in c)
         o+=f"Dialogue: 0,{t(st)},{t(en)},C,,0,0,0,,{txt}\n"
 open(sys.argv[2],"w").write(o)
