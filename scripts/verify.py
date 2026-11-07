@@ -22,7 +22,6 @@ ALLOWED_FILES = {
     "CHECK_PLAN.md",
     "README.md",
     "VERIFICATION.md",
-    "demo.mp4",
     "docs/CONCEPT.md",
     "docs/REEL-DATA-BEAT.md",
     "docs/STRATEGY.md",
@@ -53,12 +52,13 @@ ALLOWED_FILES = {
     "docs/pipeline.png",
     "docs/pipeline.tldraw.json",
     "docs/reel-report.html",
-    "pitch.mp4",
     "report.html",
     "scripts/verify.py",
     "45-second-pitch-video.mp4",
     "ADD_MEDIA_CHECK_PLAN.md",
+    "DELETE_OLD_ROOT_MEDIA_CHECK_PLAN.md",
 }
+OBSOLETE_ROOT_MP4 = ("demo.mp4", "pitch.mp4")
 FORBIDDEN_PUBLISHED = re.compile(
     r"(API_DATA|\.env$|mb_raw|credential|\.pem$|\.key$)",
     re.I,
@@ -114,20 +114,6 @@ NUMBER_SOURCES = {
 }
 
 EXPECTED_MEDIA = {
-    "demo.mp4": {
-        "sha256": "99d3ed08f48f101c7025e524efb3cb3bb3b0538759aa9ccc564795c2a5aca4c1",
-        "size": 33815279,
-        "duration": 39.9,
-        "dur_lo": 15.0,
-        "dur_hi": 45.0,
-    },
-    "pitch.mp4": {
-        "sha256": "f322bb0ed0f0cc3abff56e5457c3f9010a64fa7294325712b507406ebb4af9a8",
-        "size": 36459899,
-        "duration": 45.0,
-        "dur_lo": 0.0,
-        "dur_hi": 45.0,
-    },
     "45-second-pitch-video.mp4": {
         "sha256": "e34a6fbbe5e7dd59964631bc4963e0146bd7cc27a84f659d92dfb03d07c94fa9",
         "size": 30997081,
@@ -236,6 +222,11 @@ def check_inventory(r, files):
             + (f" ({', '.join(extra)})" if extra else ""))
     r.check(not missing, "inventory: all allowlisted files present"
             + (f" (missing: {', '.join(missing)})" if missing else ""))
+    for name in OBSOLETE_ROOT_MP4:
+        r.check(name not in files, f"inventory: obsolete root {name} is absent")
+    root_mp4 = sorted(f for f in files if f.endswith(".mp4") and "/" not in f)
+    r.check(root_mp4 == ["45-second-pitch-video.mp4"],
+            f"inventory: sole root mp4 is V15 (got {root_mp4})")
     for f in files:
         if FORBIDDEN_PUBLISHED.search(Path(f).name) or FORBIDDEN_PUBLISHED.search(f):
             r.check(False, f"inventory: forbidden published path {f}")
@@ -292,6 +283,9 @@ def check_report(r):
     for ph in REQUIRED_PHRASES:
         r.check(ph.lower() in text.lower(), f"report phrase: {ph}")
     r.check("API_DATA.json" not in p.links, "report does not link to API_DATA.json")
+    r.check("demo.mp4" not in p.links and "pitch.mp4" not in p.links
+            and "../demo.mp4" not in p.links and "../pitch.mp4" not in p.links,
+            "report does not href obsolete root demo.mp4/pitch.mp4")
     for link in p.links:
         if Path(link).name == "API_DATA.json":
             r.check(False, "report relative link to private API file")

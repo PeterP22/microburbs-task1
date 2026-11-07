@@ -8,14 +8,16 @@ raw API payloads, `.env`, keys, or personal data. GitHub pull-request refs and c
 can still serve old SHAs; a refs audit is not complete erasure.
 
 Unique producer work on `creator/runclub-reel` (Remotion source and draft videos) is
-retained on that branch. Do not swap canonical root `demo.mp4` / `pitch.mp4` (v11).
-`45-second-pitch-video.mp4` is an additive v15 extra (Peter's "45 second pitch video"
-label; ffprobe 42.1s). It is not a replacement for v11. Do not put judges-walkthrough
-into production without approval.
+retained on that branch. Do not edit that branch in this deletion.
 
-Root `demo.mp4` and `pitch.mp4` are reconstructed producer originals. Commit them as
-normal Git blobs, never Git LFS pointers. Final user approval and publication remain
-PENDING. ffprobe is metadata only, not visual/audio QA.
+Root currently delivered video is `45-second-pitch-video.mp4` (v15, Peter's
+"45 second pitch video" label; ffprobe 42.1s). Do not rename it. Peter 15:17 AEDT
+removed obsolete root `demo.mp4` and `pitch.mp4` from the latest tree; do not restore
+them without a new approval. Originals remain in the private pre-sanitize backup.
+Judges-walkthrough is pending and must not be claimed present.
+
+Commit videos as normal Git blobs, never Git LFS pointers. Final user approval and
+publication remain PENDING. ffprobe is metadata only, not visual/audio QA.
 
 ## Commands
 
@@ -28,10 +30,10 @@ python3 scripts/verify.py --allow-pending
 ## Facts that must stay honest
 
 - Lifestyle score 94 (API) vs 91.0 (public ranking) is **PROVISIONAL** and unresolved.
-- Omit the exact score from videos until organiser clarification. v11 has no disputed 94.
+- Omit the exact score from videos until organiser clarification.
 - AI friendzone / mutual-flirting clips are fictional dramatisation labels
   `withoutMicroburbs` and `withMicroburbsAPI`, not a promised Microburbs outcome.
-- Built artefact: one produced reel plus pitch, files PRESENT, approval PENDING.
+- Built artefact: one produced pitch video at root, files PRESENT, approval PENDING.
   Future vision: repeatable format. No working content engine exists here.
 - Latest `main` README (post 8aa4664 / 4e353b7) dropped the older collaborator opening
   lines; those lines remain in the private pre-sanitize backup at `ae354e4`.

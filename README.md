@@ -33,9 +33,8 @@ Birthplace and age figures are **census-based, via Microburbs**. Lunar New Year 
 
 | File | Purpose | Status on this branch |
 |---|---|---|
-| `demo.mp4` | Frozen v11 reel, 39.9s | Present at repo root. Not replaced. |
-| `pitch.mp4` | Legacy pitch, 45s | Present at repo root. Not replaced. |
-| [45 second pitch video](45-second-pitch-video.mp4) | Additive v15 extra; filename is Peter's label, not exact 45.000s | PRESENT. ffprobe 42.1s (metadata only). Does not replace `pitch.mp4`. |
+| [45 second pitch video](45-second-pitch-video.mp4) | Currently delivered root video (v15). Filename is Peter's label, not exact 45.000s | PRESENT. ffprobe 42.1s (metadata only). Sole root `.mp4`. |
+| Judges walkthrough | Extra 3-minute walkthrough | PENDING. Not in this tree. |
 | [report.html](report.html) | Idea, investigation, validation and cultural calendar | Static report with five recording-friendly sections. |
 | `docs/` | Strategy, concept, hook bank, charts and aggregate tables | Supporting evidence. |
 
@@ -114,7 +113,7 @@ Editable diagram: [docs/pipeline.tldraw.json](docs/pipeline.tldraw.json).
 
 ## What we built
 
-A short vertical reel (`demo.mp4`, v11, **PRESENT**) that uses a run-club dating-culture hook
+A short vertical reel ([45 second pitch video](45-second-pitch-video.mp4), v15, **PRESENT**) that uses a run-club dating-culture hook
 to teach what Microburbs' *lifestyle* score measures: access to cafes, restaurants, bars,
 parks and recreation. Today this is **human-led**: one handmade video, not a live app or a
 working content engine.
@@ -126,19 +125,19 @@ goal, not a guaranteed or measured result.
 
 ## Data
 
-Illustrative social-club example (not the subject of the existing v11 video):
+Illustrative social-club example (not the subject of the existing current pitch video):
 [One Drop Brewing Run Club](https://onedropbrewingco.com.au/pages/whats-on) in Botany.
 Botany is a different place from the Surry Hills lifestyle metric used in the lesson; do
-not join them. Frozen v11 media is unchanged and is documented in [report.html](docs/reel-report.html)
-(including that video's original club evidence). An API figure and a public ranking page
-disagree, so the exact score is omitted from the video and is not treated as settled.
+not join them. Video club evidence stays in [report.html](docs/reel-report.html). An API
+figure and a public ranking page disagree, so the exact score is omitted from the video
+and is not treated as settled.
 
 ## Status
 
-v11 `demo.mp4` and `pitch.mp4` are present and were **not** remade for One Drop. Extra
-file [45 second pitch video](45-second-pitch-video.mp4) (v15) sits alongside them and
-does **not** replace those originals. ffprobe duration of that extra file is **42.1s**
-(metadata only, not visual/audio QA); the title is a label, not a claim of exact 45.000s.
-Content approval, organiser clearance, publication, and submission remain **PENDING**.
-Do not swap v11 `demo.mp4` / `pitch.mp4` for v12 or later. Limits, AI-scene labels, and
-media metadata: [report.html](docs/reel-report.html).
+Sole currently delivered root video: [45 second pitch video](45-second-pitch-video.mp4)
+(v15). ffprobe duration is **42.1s** (metadata only, not visual/audio QA); the title is
+a label, not a claim of exact 45.000s. Obsolete root `demo.mp4` and `pitch.mp4` were
+removed from the latest tree; private originals remain in backup. A judges walkthrough
+is **PENDING** and is not in this tree. Content approval, organiser clearance,
+publication, and submission remain **PENDING**. Limits, AI-scene labels, and media
+metadata: [report.html](docs/reel-report.html).

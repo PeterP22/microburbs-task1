@@ -48,7 +48,7 @@
   <h1>Are run clubs the new Love Island?</h1>
   <p class="lede">A short vertical reel that uses romance as the hook and a Microburbs neighbourhood metric as the lesson. Playful romantic education, not dating advice.</p>
   <p class="status">Private repo. Not public and not submitted. <code>API_DATA.json</code> is already in history; these docs do not copy it.</p>
-  <p class="status">Root files <code>demo.mp4</code> and <code>pitch.mp4</code> are PRESENT. ffprobe metadata matches the producer handoff. That is not visual/audio QA. Final user approval and publication are still PENDING. Older producer-branch pitch files were stale and were not copied.</p>
+  <p class="status">Root currently delivered video is <a href="../45-second-pitch-video.mp4">45-second-pitch-video.mp4</a> (v15). ffprobe 42.1s, metadata only, not visual/audio QA. Obsolete root <code>demo.mp4</code> and <code>pitch.mp4</code> were removed from the latest tree. Final user approval and publication are still PENDING.</p>
   <p class="status">Lifestyle score is PROVISIONAL: API 94 vs public ranking 91.0. Failed independent cross-check. Omit the exact score from videos.</p>
 </header>
 
@@ -120,10 +120,10 @@
 <h2 id="media">Media</h2>
 <table>
   <tr><th>File</th><th>Requirement</th><th>Status</th></tr>
-  <tr><td><a href="../demo.mp4">demo.mp4</a></td><td>Finished social post, 15–45 s, 1080x1920, under 95,000,000 bytes</td><td><span class="present">PRESENT</span> 39.900 s, H.264/AAC. Metadata only. Final user approval PENDING.</td></tr>
-  <tr><td><a href="../pitch.mp4">pitch.mp4</a></td><td>Pitch, 45 s or shorter, under 95,000,000 bytes</td><td><span class="present">PRESENT</span> 45 s, H.264/AAC. Metadata only. Final user approval PENDING.</td></tr>
+  <tr><td><a href="../45-second-pitch-video.mp4">45 second pitch video</a></td><td>Currently delivered root video, 45 s or shorter, 1080x1920, under 95,000,000 bytes</td><td><span class="present">PRESENT</span> 42.1 s, H.264/AAC. Metadata only. Final user approval PENDING.</td></tr>
+  <tr><td>Judges walkthrough</td><td>Separate 3-minute walkthrough; extra, not a replacement for the pitch</td><td><span class="pending">PENDING</span> Not in this tree.</td></tr>
 </table>
-<p>v11 notes (producer): original music, Jono narration, fictional AI dating contrast, map instead of a wrongly generated cathedral, no exact 94 score. ffprobe is not visual/audio QA. A separate 3-minute walkthrough is extra and does not replace <code>demo.mp4</code>.</p>
+<p>v11 production notes (producer; files no longer at repo root): original music, Jono narration, fictional AI dating contrast, map instead of a wrongly generated cathedral, no exact 94 score. ffprobe is not visual/audio QA. A judges 3-minute walkthrough is pending and is not present here.</p>
 
 <footer>Team Sake. Open locally with <code>python3 -m http.server</code>. Metadata check: <code>python3 scripts/verify.py</code> (not visual/audio QA; approval still PENDING).</footer>
 </main>
