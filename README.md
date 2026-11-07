@@ -3,7 +3,7 @@
 We use Microburbs data to find Sydney neighbourhoods that are better suited to running dates.
 Watch our reel from [here🔗](https://www.instagram.com/reel/DfbTA9tvH8t/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==)
 
-# The shipped reel: Are run clubs the new Love Island? (Team Sake)
+# The shipped reel: Where would you rather meet someone through social running? (Team Sake)
 
 The reel report lives at [docs/reel-report.html](docs/reel-report.html)
 
