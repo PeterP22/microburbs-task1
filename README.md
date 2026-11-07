@@ -1,7 +1,9 @@
 # Where to Go for a Running Date 🏃🏻‍♂️🏃🏻‍♀️💕
 
 We use Microburbs data to find Sydney neighbourhoods that are better suited to running dates.
-Watch our reel from [here🔗](https://www.instagram.com/reel/DfbTA9tvH8t/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==)
+Watch our reel▶️ from [here🔗](https://www.instagram.com/reel/DfbTA9tvH8t/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==)
+
+Judge walk-though video, [here🔗](https://github.com/PeterP22/microburbs-task1/blob/main/judges-walkthrough-v2.mp4)
 
 # The shipped reel: Where would you rather meet someone through social running? (Team Sake)
 
