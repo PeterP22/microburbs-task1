@@ -55,7 +55,9 @@ ALLOWED_FILES = {
     "report.html",
     "scripts/verify.py",
     "45-second-pitch-video.mp4",
+    "judges-walkthrough-v2.mp4",
     "ADD_MEDIA_CHECK_PLAN.md",
+    "ADD_WALKTHROUGH_V2_CHECK_PLAN.md",
     "DELETE_OLD_ROOT_MEDIA_CHECK_PLAN.md",
 }
 OBSOLETE_ROOT_MP4 = ("demo.mp4", "pitch.mp4")
@@ -76,6 +78,7 @@ README_PHRASES = [
     "not the subject of the existing",
     "45 second pitch video",
     "42.1s",
+    "3 minute judges walkthrough (corrected v2)",
 ]
 AGENTS_REQUIRED = ["python3 scripts/verify.py", "--allow-pending", "python3 -m http.server"]
 REPORT_HEADINGS = [
@@ -120,6 +123,17 @@ EXPECTED_MEDIA = {
         "duration": 42.1,
         "dur_lo": 0.0,
         "dur_hi": 45.0,
+        "width": 1080,
+        "height": 1920,
+    },
+    "judges-walkthrough-v2.mp4": {
+        "sha256": "a2e005ff187aef2279329caa0f79ee213edcad16502a5b1ca6211f64741dd2d0",
+        "size": 39980271,
+        "duration": 180.011,
+        "dur_lo": 180.0,
+        "dur_hi": 181.0,
+        "width": 1920,
+        "height": 1080,
     },
 }
 PIPELINE_PNG_SHA256 = "f0b05abf6c797e6a0c2f80f9538ed657b6cc2d766c3aaef8ca55322c40c5e264"
@@ -225,8 +239,8 @@ def check_inventory(r, files):
     for name in OBSOLETE_ROOT_MP4:
         r.check(name not in files, f"inventory: obsolete root {name} is absent")
     root_mp4 = sorted(f for f in files if f.endswith(".mp4") and "/" not in f)
-    r.check(root_mp4 == ["45-second-pitch-video.mp4"],
-            f"inventory: sole root mp4 is V15 (got {root_mp4})")
+    r.check(root_mp4 == ["45-second-pitch-video.mp4", "judges-walkthrough-v2.mp4"],
+            f"inventory: root mp4s are V15 and walkthrough v2 (got {root_mp4})")
     for f in files:
         if FORBIDDEN_PUBLISHED.search(Path(f).name) or FORBIDDEN_PUBLISHED.search(f):
             r.check(False, f"inventory: forbidden published path {f}")
@@ -431,8 +445,8 @@ def check_media(r, allow_pending):
         except (subprocess.CalledProcessError, KeyError, IndexError, ValueError, StopIteration) as e:
             r.check(False, f"media: ffprobe failed on {name}: {e}")
             continue
-        r.check((info["width"], info["height"]) == (1080, 1920),
-                f"media: {name} {info['width']}x{info['height']} == 1080x1920")
+        r.check((info["width"], info["height"]) == (spec["width"], spec["height"]),
+                f"media: {name} {info['width']}x{info['height']} == {spec['width']}x{spec['height']}")
         r.check(info["vcodec"] == "h264", f"media: {name} video codec {info['vcodec']} == h264")
         r.check(info["acodec"] == "aac", f"media: {name} audio codec {info['acodec']} == aac")
         d = info["duration"]

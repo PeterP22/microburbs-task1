@@ -10,11 +10,12 @@ can still serve old SHAs; a refs audit is not complete erasure.
 Unique producer work on `creator/runclub-reel` (Remotion source and draft videos) is
 retained on that branch. Do not edit that branch in this deletion.
 
-Root currently delivered video is `45-second-pitch-video.mp4` (v15, Peter's
-"45 second pitch video" label; ffprobe 42.1s). Do not rename it. Peter 15:17 AEDT
-removed obsolete root `demo.mp4` and `pitch.mp4` from the latest tree; do not restore
-them without a new approval. Originals remain in the private pre-sanitize backup.
-Judges-walkthrough is pending and must not be claimed present.
+Root currently delivered videos are `45-second-pitch-video.mp4` (v15, Peter's
+"45 second pitch video" label; ffprobe 42.1s) and `judges-walkthrough-v2.mp4`
+(3 minute judges walkthrough, corrected v2; ffprobe 180.0s 1920x1080). Do not
+rename them. Peter 15:17 AEDT removed obsolete root `demo.mp4` and `pitch.mp4`
+from the latest tree; do not restore them without a new approval. Originals remain
+in the private pre-sanitize backup.
 
 Commit videos as normal Git blobs, never Git LFS pointers. Final user approval and
 publication remain PENDING. ffprobe is metadata only, not visual/audio QA.

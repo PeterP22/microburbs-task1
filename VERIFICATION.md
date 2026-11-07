@@ -1,19 +1,14 @@
-# Verification report — root media now V15 only (7 Nov 2026)
+# Verification report — additive judges-walkthrough-v2 (7 Nov 2026)
 
-Private repo. Not publication or submission. Visibility stays private.
-Obsolete root `demo.mp4` and `pitch.mp4` removed from the latest tree only.
-No history rewrite. Private backup untouched. Judges-walkthrough not present.
-
-Incoming/current V15 check is hash + ffprobe metadata only, not visual/audio QA.
+Public repo (Peter's override). This add does not change visibility or history.
+V15 preserved. No visual/audio QA claimed.
 
 ## Media
 
 - 45-second-pitch-video.mp4 SHA256 `e34a6fbbe5e7dd59964631bc4963e0146bd7cc27a84f659d92dfb03d07c94fa9`
-  30997081 bytes; ffprobe 42.100s 1080x1920 h264/aac
-  git blob `d965df13d4b6c267e227694908b04cfe5ea5b1aa`
-- Removed from latest tree (originals in private backup / git history):
-  - demo `99d3ed08f48f101c7025e524efb3cb3bb3b0538759aa9ccc564795c2a5aca4c1`
-  - pitch `f322bb0ed0f0cc3abff56e5457c3f9010a64fa7294325712b507406ebb4af9a8`
+- judges-walkthrough-v2.mp4 SHA256 `a2e005ff187aef2279329caa0f79ee213edcad16502a5b1ca6211f64741dd2d0`
+  39980271 bytes; ffprobe 180.011s 1920x1080 h264/aac
+  git blob `87a16950f0cc6f68e92e0b98929e97030a67fc0a`
 
 ## Commands
 

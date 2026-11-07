@@ -56,8 +56,8 @@ Birthplace and age figures are **census-based, via Microburbs**. Lunar New Year 
 
 | File | Purpose | Status on this branch |
 |---|---|---|
-| [45 second pitch video](45-second-pitch-video.mp4) | Currently delivered root video (v15). Filename is Peter's label, not exact 45.000s | PRESENT. ffprobe 42.1s (metadata only). Sole root `.mp4`. |
-| Judges walkthrough | Extra 3-minute walkthrough | PENDING. Not in this tree. |
+| [45 second pitch video](45-second-pitch-video.mp4) | Currently delivered root pitch (v15). Filename is Peter's label, not exact 45.000s | PRESENT. ffprobe 42.1s (metadata only). |
+| [3 minute judges walkthrough (corrected v2)](judges-walkthrough-v2.mp4) | Extra 3-minute judges walkthrough, corrected v2 | PRESENT. ffprobe 180.0s 1920×1080 (metadata only). |
 | `docs/` | Strategy, concept, hook bank, charts and aggregate tables | Supporting evidence. |
 
 ## Details for AI readers
@@ -113,10 +113,9 @@ and is not treated as settled.
 
 ## Status
 
-Sole currently delivered root video: [45 second pitch video](45-second-pitch-video.mp4)
-(v15). ffprobe duration is **42.1s** (metadata only, not visual/audio QA); the title is
-a label, not a claim of exact 45.000s. Obsolete root `demo.mp4` and `pitch.mp4` were
-removed from the latest tree; private originals remain in backup. A judges walkthrough
-is **PENDING** and is not in this tree. Content approval, organiser clearance,
-publication, and submission remain **PENDING**. Limits, AI-scene labels, and media
-metadata: [report.html](docs/reel-report.html).
+Currently delivered root videos: [45 second pitch video](45-second-pitch-video.mp4)
+(v15, **42.1s**) and [3 minute judges walkthrough (corrected v2)](judges-walkthrough-v2.mp4)
+(ffprobe **180.0s**, 1920×1080, metadata only, not visual/audio QA). Obsolete root
+`demo.mp4` and `pitch.mp4` were removed from the latest tree; private originals remain
+in backup. Content approval, organiser clearance, publication, and submission remain
+**PENDING**. Limits, AI-scene labels, and media metadata: [report.html](docs/reel-report.html).
