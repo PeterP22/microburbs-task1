@@ -1,0 +1,53 @@
+suburb,bedrooms,median,size
+Alexandria,0.0,525.0,7
+Alexandria,1.0,750.0,383
+Barangaroo,1.0,1400.0,36
+Beaconsfield (NSW),0.0,600.0,1
+Beaconsfield (NSW),1.0,722.5,10
+Camperdown (NSW),0.0,455.0,42
+Camperdown (NSW),1.0,750.0,385
+Centennial Park (NSW),0.0,515.0,17
+Centennial Park (NSW),1.0,665.0,126
+Chippendale,0.0,650.0,83
+Chippendale,1.0,899.0,539
+Darlinghurst,0.0,520.0,137
+Darlinghurst,1.0,720.0,670
+Darlington (Sydney - NSW),0.0,627.5,2
+Darlington (Sydney - NSW),1.0,600.0,27
+Dawes Point,1.0,1225.0,2
+Elizabeth Bay,0.0,530.0,129
+Elizabeth Bay,1.0,700.0,361
+Erskineville,0.0,465.0,20
+Erskineville,1.0,760.0,281
+Eveleigh,1.0,750.0,7
+Forest Lodge,0.0,500.0,28
+Forest Lodge,1.0,790.0,212
+Glebe (NSW),0.0,475.0,102
+Glebe (NSW),1.0,650.0,331
+Haymarket,0.0,780.0,7
+Haymarket,1.0,960.0,315
+Millers Point,0.0,750.0,3
+Millers Point,1.0,900.0,62
+Potts Point,0.0,530.0,222
+Potts Point,1.0,700.0,696
+Pyrmont,0.0,650.0,21
+Pyrmont,1.0,750.0,298
+Redfern,0.0,532.5,46
+Redfern,1.0,740.0,316
+Rosebery (NSW),0.0,710.0,4
+Rosebery (NSW),1.0,800.0,358
+Rushcutters Bay,0.0,520.0,105
+Rushcutters Bay,1.0,650.0,206
+Surry Hills,0.0,525.0,155
+Surry Hills,1.0,775.0,882
+Sydney,0.0,697.5,114
+Sydney,1.0,850.0,940
+The Rocks (Sydney - NSW),1.0,1100.0,31
+Ultimo,0.0,565.0,59
+Ultimo,1.0,700.0,405
+Waterloo (NSW),0.0,600.0,19
+Waterloo (NSW),1.0,800.0,560
+Woolloomooloo,0.0,510.0,45
+Woolloomooloo,1.0,795.0,179
+Zetland,0.0,797.5,10
+Zetland,1.0,850.0,577
