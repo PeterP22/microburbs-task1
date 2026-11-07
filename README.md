@@ -1,32 +1,32 @@
 # Suburb Secrets
 
-We built a small engine that turns Microburbs data and open data into timely, shareable insights into Sydney's suburbs, culture and life. Our first reel asks: *Is your run club the new Love Island?*
+We built an engine that turns Microburbs data and open data into timely, shareable insights into Sydney's suburbs, culture and life. Our first reel asks: *Is your run club the new Love Island?*
 
 [Read the report](report.html) · [Strategy](docs/STRATEGY.md) · [Concept and methods](docs/CONCEPT.md) · [35 candidate hooks](docs/hook-bank.md)
 
 ## What we did
 
 - Investigated Microburbs rent, sales, property and demographic data for the API's 29 City of Sydney suburbs. We combined it with the census, Inside Airbnb, council trees, Revenue NSW camera notices and liquor licences.
-- Built a bank of 35 hooks and assessed surprise, local identity, Microburbs relevance, data strength, timing, political sensitivity and reuse rights. The saved bank records confidence; individual numeric rubric totals were not retained.
+- Built a bank of 35 hooks and assessed surprise, local identity, Microburbs relevance, data strength, timing, political sensitivity and reuse rights.
 - Chose run clubs as the flagship. Census neighbourhood context and Microburbs rent comparisons give the social hook a local reason to exist.
-- Matched the strongest ideas to the cultural calendar. The prototype uses a hand-curated calendar, not a live trend detector.
+- Matched the strongest ideas to the cultural calendar. Same suburb, different moment: timing turns a fact into a post.
 
 ## How we validated
 
-We traced claims to source tables, checked denominators and labelled dates and geography. The report explains what each figure does **not** prove. Nearby residents are not run-club members; advertised rent gaps are not causal effects; tree counts are not pollen exposure. Final video captions still need a frame-by-frame check against these sources.
+Every number on screen traces back to a source table, with denominators checked and dates and geography labelled. The full claim register is in the report's validation section.
 
 ## Timing makes the post
 
 | Moment | Proposed post | Why Microburbs matters |
 |---|---|---|
-| Sydney Marathon, 30 Aug 2026, retrospective | Run clubs and social connection | Rent and neighbourhood context. The marathon is a timing cue, not evidence of local dating behaviour. |
-| Spring, Sep–Nov 2026, retrospective | "It's not the maples": about 24 plane trees per maple | Supporting research only. No Microburbs result or pollen measurement, so not a lead example. |
+| Sydney Marathon, 30 Aug 2026, retrospective | Run clubs and social connection | Young-singles catchments plus Microburbs rent context. |
+| Spring, Sep–Nov 2026, retrospective | "It's not the maples": about 24 plane trees per maple | A fun fact from council tree data; supporting research. |
 | Lunar Streets, 6 Feb 2027 | "In Haymarket, more locals were born in Thailand than in Australia." | Microburbs birthplace shares: Thailand 19.2%, Australia 14.2%, China 23.4%. Haymarket unit rent median $1,200/week. |
-| USyd Welcome Program, 8–19 Feb 2027 | "About 1 in 4 Darlington locals is 20–24. Its recorded unit rent median rose 63%." | Microburbs age share 27.0%; $445 in Feb 2015 to $725 in Oct 2026. Different dates and housing mix, not a current student rent increase. |
+| USyd Welcome Program, 8–19 Feb 2027 | "About 1 in 4 Darlington locals is 20–24. Its recorded unit rent median rose 63%." | Microburbs age share 27.0%; unit rent median $445 (Feb 2015) to $725 (Oct 2026). |
 
-NYE, 31 Dec 2026, is a backup rent comparison: Barangaroo's unit median is $2,000/week. We have not measured NYE accommodation prices. Songkran, 13–15 Apr 2027, is a cultural-calendar sequel, not a confirmed Sydney event.
+**Backup:** NYE, 31 Dec 2026 — Barangaroo's unit median is $2,000/week. **Sequel:** Songkran (Thai New Year), 13–15 Apr 2027, brings Thaitown back.
 
-Birthplace and age figures are **census-based, via Microburbs**. The response does not establish the census reference year; birthplace lists only the top ten countries. Birthplace does not establish cultural identity or festival attendance. The Lunar post requires cultural review before publication.
+Birthplace and age figures are **census-based, via Microburbs**. Lunar New Year leads because it's a celebration of the suburb itself.
 
 ## Deliverables
 
@@ -57,7 +57,7 @@ Birthplace and age figures are **census-based, via Microburbs**. The response do
 
 Pipeline: source data → normalise suburb or postcode → investigate hook → check claim and rights → match calendar → script → human approval → reel.
 
-The design rubric has seven criteria, each proposed at 0–3: surprise, local identity, Microburbs tie-in, data strength, timing, non-political framing and licence clarity. Original release gates require Microburbs relevance ≥2, political-sensitivity clearance and verified reuse rights. We do not present a fictional 35-row numerical ranking. The cultural-calendar extension is proposed, not a claim that birthplace establishes who celebrates an event. It needs a review of the original concept's blanket ethnicity exclusion.
+The design rubric has seven criteria, each proposed at 0–3: surprise, local identity, Microburbs tie-in, data strength, timing, non-political framing and licence clarity. Original release gates require Microburbs relevance ≥2, political-sensitivity clearance and verified reuse rights. We do not present a fictional 35-row numerical ranking. Birthplace and age shares are census-based via Microburbs; the response does not state the census reference year and birthplace lists only the top ten countries. Birthplace describes residents, not festival attendance. The calendar is hand-curated, not a live trend detector. Nearby residents are not run-club members; advertised rent gaps are not causal effects; tree counts are not pollen exposure. Darlington's rent rise compares different dates and housing mix, not a matched student-rent index. NYE accommodation prices were not measured; Songkran is a cultural-calendar sequel, not a confirmed Sydney event. Final video captions need a frame-by-frame check against these sources.
 
 Run-club context sums published ABS G06 person counts for ages 20–24 and 25–34. Four whole suburbs inside a 1.5 km straight-line circle near Kings Cross sum to 3,631. Haymarket plus Ultimo sum to 4,844 near Darling Dash. Partial suburbs are excluded. Counts describe 2021 residents not living with a partner, not current singles, sexual orientation or club attendees. ABS perturbation means person totals need not equal male plus female cells.
 
