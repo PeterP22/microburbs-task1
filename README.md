@@ -1,6 +1,6 @@
 # Where to Go for a Running Date
 
-We built an engine that turns Microburbs data and open data into timely, shareable insights into Sydney's suburbs, culture and life. Our first reel asks: *Is your run club the new Love Island?*
+We use Microburbs data to find Sydney neighbourhoods that are better suited to running dates.
 
 [Read the report](report.html) · [Strategy](docs/STRATEGY.md) · [Concept and methods](docs/CONCEPT.md) · [35 candidate hooks](docs/hook-bank.md)
 
