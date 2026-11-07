@@ -34,6 +34,9 @@ README_PHRASES = [
     "not built",
     "report.html",
     "docs/pipeline.png",
+    "One Drop",
+    "Botany",
+    "not the subject of the existing",
 ]
 AGENTS_REQUIRED = ["python3 scripts/verify.py", "--allow-pending", "python3 -m http.server"]
 REPORT_HEADINGS = [
@@ -272,6 +275,12 @@ def check_wording(r, readme, report_text):
             "wording: README does not headline the unresolved scores")
     r.check("report.html" in readme, "wording: README points to report.html for evidence")
     r.check("human-led" in readme.lower(), "wording: README says work is human-led today")
+    r.check("onedropbrewingco.com.au/pages/whats-on" in readme.lower(),
+            "wording: README One Drop official URL")
+    r.check("she runs" in report_text.lower() and "st mary" in report_text.lower(),
+            "wording: report keeps original She Runs video evidence")
+    r.check("st mary" not in readme.lower() and "a.p. bakery" not in readme.lower(),
+            "wording: README does not apply She Runs route to One Drop")
     r.check("not built" in readme.lower(), "wording: README marks calendar/feedback as not built")
     r.check("virality" in readme.lower() and ("not" in readme.lower() or "not guaranteed" in readme.lower()),
             "wording: README treats virality as a goal, not a guarantee")
