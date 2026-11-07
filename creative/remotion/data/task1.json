@@ -1,0 +1,110 @@
+{
+  "example": false,
+  "hook": "Is your run club\nthe new Love Island?",
+  "clubs": [
+    {
+      "name": "Redfern Run Club",
+      "suburb": "South Eveleigh",
+      "x": 310,
+      "y": 660,
+      "outside": false,
+      "source": "https://www.redfern-run.club/"
+    },
+    {
+      "name": "The Sydney Run Club",
+      "suburb": "Bondi Beach",
+      "x": 830,
+      "y": 760,
+      "outside": true,
+      "source": "https://thesydneyrunclub.com.au/"
+    },
+    {
+      "name": "Sydney Frontrunners",
+      "suburb": "Centennial Park",
+      "x": 680,
+      "y": 1050,
+      "outside": true,
+      "source": "https://www.sydneyfrontrunners.org/our-runs-2/saturday-runs/"
+    },
+    {
+      "name": "Monday Run Club",
+      "suburb": "Pyrmont",
+      "x": 170,
+      "y": 490,
+      "outside": false,
+      "source": "https://www.runhub.co/clubs/monday-run-club"
+    },
+    {
+      "name": "Inner West Run Club",
+      "suburb": "Camperdown / Glebe",
+      "x": 170,
+      "y": 830,
+      "outside": false,
+      "source": "https://rundais.org/run-clubs/inner-west-run-club/"
+    },
+    {
+      "name": "Midnight Runners Sydney",
+      "suburb": "Sydney CBD / Darling Harbour",
+      "x": 420,
+      "y": 450,
+      "outside": false,
+      "source": "https://www.heylo.com/g/8a9462a8-80f9-46b7-9ab6-f76192cde5d6"
+    },
+    {
+      "name": "Kings Cross Track Club",
+      "suburb": "Kings Cross (locality)",
+      "x": 560,
+      "y": 570,
+      "outside": false,
+      "source": "http://www.kingscrosstrackclub.com/weekly-schedule"
+    },
+    {
+      "name": "She Runs",
+      "suburb": "Sydney CBD (start) / Surry Hills (finish)",
+      "x": 470,
+      "y": 670,
+      "outside": false,
+      "source": "https://www.sheruns.com.au/sheruns"
+    },
+    {
+      "name": "The Shop Run - Sydney (Up There Athletics)",
+      "suburb": "Darlinghurst",
+      "x": 570,
+      "y": 760,
+      "outside": false,
+      "source": "https://upthereathletics.com/pages/the-shop-run"
+    },
+    {
+      "name": "440 Run Club Bronte",
+      "suburb": "Bronte",
+      "x": 850,
+      "y": 1080,
+      "outside": true,
+      "source": "https://www.runhub.co/clubs/440-run-club-bronte"
+    },
+    {
+      "name": "Unofficial Run Club",
+      "suburb": "Kirribilli / Milsons Point",
+      "x": 430,
+      "y": 280,
+      "outside": true,
+      "source": "https://www.unofficialrunclub.com/"
+    },
+    {
+      "name": "A.P. Run Club",
+      "suburb": "Surry Hills",
+      "x": 480,
+      "y": 880,
+      "outside": false,
+      "source": "https://reyourrun.com.au/blogs/running/best-run-clubs-sydney-nsw"
+    },
+    {
+      "name": "Bondi Beach Run Club",
+      "suburb": "Bondi Beach",
+      "x": 850,
+      "y": 850,
+      "outside": true,
+      "source": "https://reyourrun.com.au/blogs/running/best-run-clubs-sydney-nsw"
+    }
+  ]
+}
