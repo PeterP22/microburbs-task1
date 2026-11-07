@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Are run clubs the new Love Island? — Team Sake, Task 1 report</title>
+<style>
+  :root {
+    --ink: #1d1a1f; --muted: #625b66; --line: #e6e0e3; --bg: #fbf8f6;
+    --accent: #c2410c; --accent-soft: #fff1e8; --warn: #8a5a00; --warn-soft: #fff7df;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+  header p.kicker { margin: 0; color: var(--accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; }
+  h1 { font-size: 38px; line-height: 1.15; margin: 8px 0 12px; letter-spacing: -.01em; }
+  h2 { font-size: 22px; margin: 44px 0 12px; padding-top: 20px; border-top: 1px solid var(--line); }
+  p.lede { font-size: 19px; color: var(--muted); margin: 0 0 24px; }
+  .status { background: var(--warn-soft); color: var(--warn); border: 1px solid #f0dca6; border-radius: 10px; padding: 12px 16px; font-size: 15px; margin: 0 0 12px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+  .figure { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; }
+  .figure .num { font-size: 40px; font-weight: 700; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+  .figure .num small { font-size: 16px; color: var(--muted); font-weight: 500; }
+  .figure p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+  .figure strong { color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { background: #f4efec; font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  ol.method { padding-left: 0; list-style: none; counter-reset: s; }
+  ol.method li { counter-increment: s; position: relative; padding: 0 0 14px 44px; }
+  ol.method li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: #f1ece9; padding: 1px 5px; border-radius: 4px; }
+  .pending { display: inline-block; font-size: 12px; font-weight: 700; color: var(--warn); background: var(--warn-soft); border: 1px solid #f0dca6; border-radius: 999px; padding: 1px 8px; margin-left: 6px; }
+  .present { display: inline-block; font-size: 12px; font-weight: 700; color: #166534; background: #ecfdf3; border: 1px solid #bbf7d0; border-radius: 999px; padding: 1px 8px; margin-left: 6px; }
+  ul { padding-left: 22px; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 640px) { .pair { grid-template-columns: 1fr; } h1 { font-size: 30px; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="kicker">Team Sake · Microburbs hackathon · Task 1 social post</p>
+  <h1>Are run clubs the new Love Island?</h1>
+  <p class="lede">A short vertical reel that uses romance as the hook and a Microburbs neighbourhood metric as the lesson. Playful romantic education, not dating advice.</p>
+  <p class="status">Private repo. Not public and not submitted. <code>API_DATA.json</code> is already in history; these docs do not copy it.</p>
+  <p class="status">Root files <code>demo.mp4</code> and <code>pitch.mp4</code> are PRESENT. ffprobe metadata matches the producer handoff. That is not visual/audio QA. Final user approval and publication are still PENDING. Older producer-branch pitch files were stale and were not copied.</p>
+  <p class="status">Lifestyle score is PROVISIONAL: API 94 vs public ranking 91.0. Failed independent cross-check. Omit the exact score from videos.</p>
+</header>
+
+<h2 id="data">Data</h2>
+<div class="pair">
+  <div class="figure">
+    <div class="num">94<small> API</small></div>
+    <p><strong>Surry Hills lifestyle, supplied export.</strong> Level "Very high". Inspection date 7 Nov 2026. No vintage in the sample. Not treated as settled.</p>
+  </div>
+  <div class="figure">
+    <div class="num">91.0<small> public</small></div>
+    <p><strong>Same suburb on the public Sydney ranking page.</strong> Fetched 7 Nov 2026. No version detail sufficient to reconcile. Not treated as the substitute "correct" figure.</p>
+  </div>
+</div>
+<table>
+  <tr><th>Source</th><th>Used for</th><th>Notes</th></tr>
+  <tr><td>Microburbs hackathon API <code>/v1/suburbs/{suburb_name}/lifestyle/livability</code></td><td>Surry Hills scores item <code>key=lifestyle</code>: 94, "Very high"</td><td>Private supplied export, inspected 7 Nov 2026. Raw response not included.</td></tr>
+  <tr><td>Microburbs hackathon API <code>/v1/suburbs/{suburb_name}/lifestyle/livability-map</code></td><td>Definition of the <code>lifestyle</code> dimension</td><td>Access to the things people go out for — cafes, restaurants, bars, parks and recreation. Rescaled 0–100 score.</td></tr>
+  <tr><td>Microburbs public page, <a href="https://www.microburbs.com.au/People-Lifestyle/Top-suburbs-for-Lifestyle-Score/Sydney">Top suburbs for Lifestyle Score / Sydney</a></td><td>Independent value cross-check</td><td>Lists Surry Hills at 91.0. Unresolved against 94.</td></tr>
+  <tr><td>She Runs, <a href="https://www.sheruns.com.au/sheruns">sheruns.com.au/sheruns</a></td><td>Setting for the hook</td><td>Publisher describes a Wednesday 6:30am, 6 km social run from St Mary's Cathedral (CBD) finishing at the A.P. Bakery rooftop, Surry Hills. Not observed by us.</td></tr>
+</table>
+<p>What the score is not: a percentage, a count of 94 venues, a dating or relationship-quality score, a Census figure, or a measure of attendee ages or singles.</p>
+
+<h2 id="method">Method</h2>
+<ol class="method">
+  <li><strong>Hook.</strong> Start from the cultural idea that run clubs are where people meet now.</li>
+  <li><strong>Primary-source club setting.</strong> Pick a real social run whose organiser publishes the route: She Runs starts in the CBD and finishes in Surry Hills.</li>
+  <li><strong>Microburbs metric definition.</strong> Read the Surry Hills <code>lifestyle</code> score, then look up what the metric measures on the livability-map endpoint.</li>
+  <li><strong>Editorial review.</strong> Strip every claim we could not source cleanly, and hold the exact score as PROVISIONAL after the public-page mismatch.</li>
+  <li><strong>Produced reel (PRESENT, approval PENDING).</strong> Remotion, ElevenLabs narration (Jono), original music, Higgsfield AI-illustrated b-roll, ffmpeg encode. Map instead of a wrongly generated cathedral. v11 omits the disputed 94. Files are at repo root; final user approval is still PENDING.</li>
+</ol>
+
+<h2 id="worked">What worked</h2>
+<ul>
+  <li>The romance hook gives a reason to watch before any number appears.</li>
+  <li>One metric with its official definition is easier to say accurately than a stack of stats.</li>
+  <li>Quoting the metric definition kept the "going out" framing tied to the source.</li>
+  <li>The public ranking cross-check caught the 94 vs 91.0 clash before a headline number went into a video.</li>
+</ul>
+
+<h2 id="did-not-work">What did not work</h2>
+<ul>
+  <li><strong>Exact score as a settled fact:</strong> API 94 and public page 91.0 disagree. Dropped from videos. Kept here as PROVISIONAL.</li>
+  <li><strong>Age share of young adults:</strong> age arrays in the sample were truncated, so the figure could not be verified. Dropped.</li>
+  <li><strong>Cafe and park counts:</strong> totals conflicted between endpoints. Dropped.</li>
+  <li><strong>Rent angle:</strong> an earlier rent story was rejected; its figures are not used.</li>
+  <li><strong>"Singles" framing:</strong> "not married" is not "single". Dropped.</li>
+  <li><strong>Club demographics:</strong> suburb characteristics are not attendee characteristics, and we have no attendee age, sexuality or relationship data.</li>
+  <li><strong>Generated cathedral still:</strong> v11 uses a map instead.</li>
+</ul>
+
+<h2 id="held-out">Held-out check</h2>
+<p>This is a <strong>manual cross-endpoint definition check</strong>, not a predictive held-out dataset. We took the number from one endpoint (<code>/lifestyle/livability</code>) and checked its meaning against a separate endpoint (<code>/lifestyle/livability-map</code>), so the narration describes what the score measures rather than what we assumed. That definition check is why the reel must not say "94%" or "94 venues".</p>
+<p>A second, independent value check against the public ranking page <strong>failed</strong>: 94 vs 91.0, with no date or version sufficient to reconcile. The contradictory score is unresolved, not validated. Recommendation: omit the exact score from the videos.</p>
+<p>No independent audience or engagement validation yet. No view counts. No dating-outcome measurement and no causal evidence.</p>
+
+<h2 id="limits">Limits</h2>
+<ul>
+  <li>The lifestyle score is PROVISIONAL. Do not treat 94 or 91.0 as known current/correct.</li>
+  <li>No independent audience or engagement validation yet. No view counts.</li>
+  <li>No dating-outcome measurement and no causal evidence. Run-club participation and dating odds were never measured. Microburbs is not claimed to change romance outcomes.</li>
+  <li>The b-roll is AI illustration, not footage of She Runs or any real club.</li>
+  <li>Clips labelled <code>withoutMicroburbs</code> (friendzone) and <code>withMicroburbsAPI</code> (mutual flirting) are a <strong>fictional AI dramatisation</strong>, not a promised outcome, and not documentary evidence of a club.</li>
+  <li>Club schedules are as the publisher describes them, not observed.</li>
+  <li>Rights and organiser clearance are pending; we do not claim all licences are cleared.</li>
+  <li>The reel is hand-made. A repeatable data-to-story format across topics and cities is future vision, not something we built. There is no working content engine in this repository.</li>
+</ul>
+
+<h2 id="media">Media</h2>
+<table>
+  <tr><th>File</th><th>Requirement</th><th>Status</th></tr>
+  <tr><td><a href="demo.mp4">demo.mp4</a></td><td>Finished social post, 15–45 s, 1080x1920, under 95,000,000 bytes</td><td><span class="present">PRESENT</span> 39.900 s, H.264/AAC. Metadata only. Final user approval PENDING.</td></tr>
+  <tr><td><a href="pitch.mp4">pitch.mp4</a></td><td>Pitch, 45 s or shorter, under 95,000,000 bytes</td><td><span class="present">PRESENT</span> 45 s, H.264/AAC. Metadata only. Final user approval PENDING.</td></tr>
+</table>
+<p>v11 notes (producer): original music, Jono narration, fictional AI dating contrast, map instead of a wrongly generated cathedral, no exact 94 score. ffprobe is not visual/audio QA. A separate 3-minute walkthrough is extra and does not replace <code>demo.mp4</code>.</p>
+
+<footer>Team Sake. Open locally with <code>python3 -m http.server</code>. Metadata check: <code>python3 scripts/verify.py</code> (not visual/audio QA; approval still PENDING).</footer>
+</main>
+</body>
+</html>
