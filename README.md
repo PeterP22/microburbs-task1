@@ -128,11 +128,12 @@ suburb profile. General public education only. No personal dating advice.
 
 ## Data
 
-Club setting: [She Runs](https://www.sheruns.com.au/sheruns) (publisher schedule, not
-observed). Neighbourhood metric: Microburbs *lifestyle* (going-out access). An API figure
-and a public ranking page disagree, so the exact score is omitted from the video and is
-not treated as settled. Full sources, exclusions, and the unresolved cross-check are in
-[report.html](docs/reel-report.html).
+Illustrative social-club example (not the subject of the existing v11 video):
+[One Drop Brewing Run Club](https://onedropbrewingco.com.au/pages/whats-on) in Botany.
+Botany is a different place from the Surry Hills lifestyle metric used in the lesson; do
+not join them. Frozen v11 media is unchanged and is documented in [report.html](docs/reel-report.html)
+(including that video's original club evidence). An API figure and a public ranking page
+disagree, so the exact score is omitted from the video and is not treated as settled.
 
 ## How to run
 
@@ -146,6 +147,6 @@ python3 scripts/verify.py --allow-pending
 
 ## Status
 
-v11 `demo.mp4` and `pitch.mp4` are present. Content approval, organiser clearance,
-publication, and submission remain **PENDING**. Do not swap in v12 or later. Limits,
-AI-scene labels, and media metadata: [report.html](docs/reel-report.html).
+v11 `demo.mp4` and `pitch.mp4` are present and were **not** remade for One Drop. Content
+approval, organiser clearance, publication, and submission remain **PENDING**. Do not swap
+in v12 or later. Limits, AI-scene labels, and media metadata: [report.html](docs/reel-report.html).
