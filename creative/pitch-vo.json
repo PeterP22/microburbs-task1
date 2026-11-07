@@ -1,0 +1,603 @@
+{
+ "voice": "Charlie (premade, Australian) IKne3meq5aSn9XLyUdCD",
+ "model": "eleven_multilingual_v2",
+ "words": [
+  {
+   "word": "Is",
+   "start": 0.0,
+   "end": 0.174
+  },
+  {
+   "word": "your",
+   "start": 0.232,
+   "end": 0.383
+  },
+  {
+   "word": "run",
+   "start": 0.43,
+   "end": 0.592
+  },
+  {
+   "word": "club",
+   "start": 0.662,
+   "end": 0.94
+  },
+  {
+   "word": "the",
+   "start": 1.115,
+   "end": 1.265
+  },
+  {
+   "word": "new",
+   "start": 1.358,
+   "end": 1.544
+  },
+  {
+   "word": "Love",
+   "start": 1.614,
+   "end": 1.811
+  },
+  {
+   "word": "Island?",
+   "start": 1.869,
+   "end": 2.392
+  },
+  {
+   "word": "Strava's",
+   "start": 3.088,
+   "end": 3.68
+  },
+  {
+   "word": "2024",
+   "start": 3.762,
+   "end": 4.714
+  },
+  {
+   "word": "Year",
+   "start": 4.83,
+   "end": 5.05
+  },
+  {
+   "word": "in",
+   "start": 5.108,
+   "end": 5.166
+  },
+  {
+   "word": "Sport",
+   "start": 5.224,
+   "end": 5.538
+  },
+  {
+   "word": "survey",
+   "start": 5.596,
+   "end": 6.072
+  },
+  {
+   "word": "found",
+   "start": 6.513,
+   "end": 6.827
+  },
+  {
+   "word": "nearly",
+   "start": 6.908,
+   "end": 7.187
+  },
+  {
+   "word": "one",
+   "start": 7.303,
+   "end": 7.558
+  },
+  {
+   "word": "in",
+   "start": 7.593,
+   "end": 7.663
+  },
+  {
+   "word": "five",
+   "start": 7.779,
+   "end": 8.139
+  },
+  {
+   "word": "Gen",
+   "start": 8.185,
+   "end": 8.394
+  },
+  {
+   "word": "Z",
+   "start": 8.475,
+   "end": 8.533
+  },
+  {
+   "word": "respondents",
+   "start": 8.707,
+   "end": 9.323
+  },
+  {
+   "word": "had",
+   "start": 9.532,
+   "end": 9.694
+  },
+  {
+   "word": "dated",
+   "start": 9.764,
+   "end": 10.101
+  },
+  {
+   "word": "someone",
+   "start": 10.159,
+   "end": 10.437
+  },
+  {
+   "word": "they",
+   "start": 10.472,
+   "end": 10.6
+  },
+  {
+   "word": "met",
+   "start": 10.693,
+   "end": 10.867
+  },
+  {
+   "word": "through",
+   "start": 10.902,
+   "end": 11.111
+  },
+  {
+   "word": "exercise.",
+   "start": 11.157,
+   "end": 11.912
+  },
+  {
+   "word": "That's",
+   "start": 12.423,
+   "end": 12.678
+  },
+  {
+   "word": "a",
+   "start": 12.701,
+   "end": 12.725
+  },
+  {
+   "word": "global",
+   "start": 12.771,
+   "end": 13.073
+  },
+  {
+   "word": "survey,",
+   "start": 13.131,
+   "end": 13.723
+  },
+  {
+   "word": "about",
+   "start": 13.897,
+   "end": 14.199
+  },
+  {
+   "word": "exercise",
+   "start": 14.257,
+   "end": 14.768
+  },
+  {
+   "word": "overall.",
+   "start": 14.814,
+   "end": 15.453
+  },
+  {
+   "word": "So",
+   "start": 15.964,
+   "end": 16.126
+  },
+  {
+   "word": "we",
+   "start": 16.184,
+   "end": 16.289
+  },
+  {
+   "word": "mapped",
+   "start": 16.382,
+   "end": 16.66
+  },
+  {
+   "word": "13",
+   "start": 16.776,
+   "end": 17.392
+  },
+  {
+   "word": "Sydney",
+   "start": 17.508,
+   "end": 17.868
+  },
+  {
+   "word": "run",
+   "start": 17.938,
+   "end": 18.112
+  },
+  {
+   "word": "clubs",
+   "start": 18.17,
+   "end": 18.449
+  },
+  {
+   "word": "from",
+   "start": 18.495,
+   "end": 18.634
+  },
+  {
+   "word": "public",
+   "start": 18.716,
+   "end": 19.029
+  },
+  {
+   "word": "sources,",
+   "start": 19.076,
+   "end": 19.61
+  },
+  {
+   "word": "and",
+   "start": 19.679,
+   "end": 19.842
+  },
+  {
+   "word": "flagged",
+   "start": 19.923,
+   "end": 20.237
+  },
+  {
+   "word": "the",
+   "start": 20.271,
+   "end": 20.341
+  },
+  {
+   "word": "ones",
+   "start": 20.411,
+   "end": 20.608
+  },
+  {
+   "word": "that",
+   "start": 20.643,
+   "end": 20.771
+  },
+  {
+   "word": "meet",
+   "start": 20.829,
+   "end": 20.991
+  },
+  {
+   "word": "outside",
+   "start": 21.038,
+   "end": 21.491
+  },
+  {
+   "word": "the",
+   "start": 21.514,
+   "end": 21.583
+  },
+  {
+   "word": "City",
+   "start": 21.63,
+   "end": 21.839
+  },
+  {
+   "word": "of",
+   "start": 21.885,
+   "end": 21.932
+  },
+  {
+   "word": "Sydney,",
+   "start": 21.978,
+   "end": 22.396
+  },
+  {
+   "word": "like",
+   "start": 22.57,
+   "end": 22.802
+  },
+  {
+   "word": "Bondi",
+   "start": 22.872,
+   "end": 23.336
+  },
+  {
+   "word": "and",
+   "start": 23.406,
+   "end": 23.487
+  },
+  {
+   "word": "Bronte.",
+   "start": 23.534,
+   "end": 24.149
+  },
+  {
+   "word": "Here's",
+   "start": 24.753,
+   "end": 25.055
+  },
+  {
+   "word": "how",
+   "start": 25.101,
+   "end": 25.217
+  },
+  {
+   "word": "the",
+   "start": 25.275,
+   "end": 25.345
+  },
+  {
+   "word": "data",
+   "start": 25.403,
+   "end": 25.658
+  },
+  {
+   "word": "moves:",
+   "start": 25.717,
+   "end": 26.193
+  },
+  {
+   "word": "public",
+   "start": 26.634,
+   "end": 26.994
+  },
+  {
+   "word": "club",
+   "start": 27.052,
+   "end": 27.272
+  },
+  {
+   "word": "pages",
+   "start": 27.342,
+   "end": 27.725
+  },
+  {
+   "word": "into",
+   "start": 27.818,
+   "end": 28.097
+  },
+  {
+   "word": "one",
+   "start": 28.213,
+   "end": 28.468
+  },
+  {
+   "word": "sourced",
+   "start": 28.538,
+   "end": 28.874
+  },
+  {
+   "word": "table,",
+   "start": 28.932,
+   "end": 29.432
+  },
+  {
+   "word": "onto",
+   "start": 29.641,
+   "end": 29.919
+  },
+  {
+   "word": "a",
+   "start": 30.001,
+   "end": 30.024
+  },
+  {
+   "word": "map,",
+   "start": 30.093,
+   "end": 30.511
+  },
+  {
+   "word": "into",
+   "start": 30.79,
+   "end": 31.046
+  },
+  {
+   "word": "a",
+   "start": 31.127,
+   "end": 31.15
+  },
+  {
+   "word": "short",
+   "start": 31.231,
+   "end": 31.533
+  },
+  {
+   "word": "vertical",
+   "start": 31.626,
+   "end": 32.032
+  },
+  {
+   "word": "reel.",
+   "start": 32.114,
+   "end": 32.555
+  },
+  {
+   "word": "What",
+   "start": 33.159,
+   "end": 33.344
+  },
+  {
+   "word": "we",
+   "start": 33.391,
+   "end": 33.484
+  },
+  {
+   "word": "don't",
+   "start": 33.553,
+   "end": 33.774
+  },
+  {
+   "word": "claim:",
+   "start": 33.82,
+   "end": 34.273
+  },
+  {
+   "word": "no",
+   "start": 34.552,
+   "end": 34.749
+  },
+  {
+   "word": "love-odds",
+   "start": 34.865,
+   "end": 35.318
+  },
+  {
+   "word": "score,",
+   "start": 35.341,
+   "end": 35.841
+  },
+  {
+   "word": "and",
+   "start": 35.992,
+   "end": 36.142
+  },
+  {
+   "word": "no",
+   "start": 36.212,
+   "end": 36.34
+  },
+  {
+   "word": "local",
+   "start": 36.456,
+   "end": 36.758
+  },
+  {
+   "word": "Microburbs",
+   "start": 36.839,
+   "end": 37.478
+  },
+  {
+   "word": "demographic",
+   "start": 37.536,
+   "end": 38.047
+  },
+  {
+   "word": "finding,",
+   "start": 38.105,
+   "end": 38.615
+  },
+  {
+   "word": "because",
+   "start": 38.824,
+   "end": 39.126
+  },
+  {
+   "word": "API",
+   "start": 39.184,
+   "end": 39.66
+  },
+  {
+   "word": "access",
+   "start": 39.776,
+   "end": 40.125
+  },
+  {
+   "word": "was",
+   "start": 40.16,
+   "end": 40.276
+  },
+  {
+   "word": "blocked",
+   "start": 40.345,
+   "end": 40.612
+  },
+  {
+   "word": "from",
+   "start": 40.636,
+   "end": 40.752
+  },
+  {
+   "word": "our",
+   "start": 40.81,
+   "end": 40.903
+  },
+  {
+   "word": "build",
+   "start": 40.949,
+   "end": 41.158
+  },
+  {
+   "word": "machine.",
+   "start": 41.193,
+   "end": 41.715
+  },
+  {
+   "word": "Every",
+   "start": 42.319,
+   "end": 42.609
+  },
+  {
+   "word": "figure",
+   "start": 42.679,
+   "end": 42.946
+  },
+  {
+   "word": "has",
+   "start": 42.981,
+   "end": 43.12
+  },
+  {
+   "word": "a",
+   "start": 43.178,
+   "end": 43.201
+  },
+  {
+   "word": "source",
+   "start": 43.294,
+   "end": 43.643
+  },
+  {
+   "word": "in",
+   "start": 43.677,
+   "end": 43.747
+  },
+  {
+   "word": "the",
+   "start": 43.782,
+   "end": 43.852
+  },
+  {
+   "word": "README.",
+   "start": 43.921,
+   "end": 44.409
+  },
+  {
+   "word": "Thanks.",
+   "start": 44.734,
+   "end": 45.465
+  }
+ ],
+ "segments": [
+  {
+   "text": "Is your run club the new Love Island?",
+   "start": 0.0,
+   "end": 2.392
+  },
+  {
+   "text": "Strava's 2024 Year in Sport survey found nearly one in five Gen Z respondents had dated someone they met through exercise. That's a global survey, about exercise overall.",
+   "start": 3.088,
+   "end": 15.453
+  },
+  {
+   "text": "So we mapped 13 Sydney run clubs from public sources, and flagged the ones that meet outside the City of Sydney, like Bondi and Bronte.",
+   "start": 15.964,
+   "end": 24.149
+  },
+  {
+   "text": "Here's how the data moves: public club pages into one sourced table,",
+   "start": 24.753,
+   "end": 29.432
+  },
+  {
+   "text": "onto a map, into a short vertical reel.",
+   "start": 29.641,
+   "end": 32.555
+  },
+  {
+   "text": "What we don't claim: no love-odds score, and no local Microburbs demographic finding, because API access was blocked from our build machine.",
+   "start": 33.159,
+   "end": 41.715
+  },
+  {
+   "text": "Every figure has a source in the README. Thanks.",
+   "start": 42.319,
+   "end": 45.465
+  }
+ ]
+}
