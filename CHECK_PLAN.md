@@ -1,28 +1,28 @@
-# Check plan — README + pipeline diagram (7 Nov 2026)
+# Check plan — README club example + merged-branch cleanup (7 Nov 2026)
 
-Saved before this docs edit. Additive commit to private `main` only. No force
-push, no history rewrite, no visibility change, no publication, no submission.
-`API_DATA.json` and v11 `demo.mp4` / `pitch.mp4` stay untouched.
+Saved before this README edit. Report.html and v11 media stay as committed.
+No force-push, history rewrite, visibility change, publish, or submit.
 
-## Intended change
+## Club / geo (README only)
 
-- Add `docs/pipeline.png` (inspected PNG, 3552×3588, no overlaps) and
-  `docs/pipeline.tldraw.json`.
-- Short README (about 250–450 words) with collaborator opening lines verbatim.
-- Sections: What we built, Who it helps, Data, How to run, Status.
-- Diagram prominent with meaningful alt text. Human-led today; calendar feed and
-  feedback are future, not built. Virality is a design goal, not measured.
-- Score 94 vs 91.0 stays in `report.html`, not as README headlines.
-- Adapt `scripts/verify.py` README assertions; keep report factual/safety checks.
+- Peter 2:44/2:43 clarification: latest group is **not in v13, just the README**.
+- README illustrative example becomes One Drop Brewing Run Club,
+  https://onedropbrewingco.com.au/pages/whats-on
+- Botany is a **separate place** from the Surry Hills lifestyle metric.
+- Do **not** put One Drop schedule/route in README.
+- Do **not** transfer 94/91 or any Surry Hills figure to Botany.
+- Do **not** rewrite She Runs as the One Drop route.
+- Do **not** change `report.html` She Runs video/evidence.
+- Do **not** claim the frozen v11 video swapped club. Point to report for that video.
 
-## Verify after edits
+## Branch cleanup
 
-1. Markdown relative image/links resolve (`docs/pipeline.png`, `report.html`).
-2. PNG signature + dimensions recorded.
-3. `python3 scripts/verify.py` exit 0.
-4. Hide `docs/pipeline.png` once: strict verify fails; restore; pass again.
-5. demo/pitch SHA256 unchanged.
-6. Secret/forbidden scan still runs; allowlisted `docs/pipeline.tldraw.json`.
-7. Rebuild history-free ZIP (no `.git` / `API_DATA.json`); export README
-   distinguishes export vs source repo. Fresh unzip + strict verify.
-8. Push additive commit to `main`.
+- Delete a remote branch only if, immediately before delete, its tip is an ancestor of then-current main.
+- Retain `creator/runclub-reel` (active producer) and any unique/unapproved/unclear branch.
+- No merge of stale producer pitch/demo onto main.
+
+## After
+
+- `python3 scripts/verify.py` exit 0; media SHA unchanged; report.html unchanged vs prior commit.
+- Privacy still private. Regenerated history-free ZIP if README changed.
+- Additional diagrams: not this task.
