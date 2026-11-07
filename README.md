@@ -32,8 +32,9 @@ Birthplace and age figures are **census-based, via Microburbs**. Lunar New Year 
 
 | File | Purpose | Status on this branch |
 |---|---|---|
-| `pitch.mp4` | Reel, maximum 45 seconds | Produced on `creator/runclub-reel`; place the approved final at root during merge. |
-| `demo.mp4` | Report walkthrough, maximum 3 minutes | Produced on `creator/runclub-reel`; place the approved final at root during merge. |
+| `demo.mp4` | Frozen v11 reel, 39.9s | Present at repo root. Not replaced. |
+| `pitch.mp4` | Legacy pitch, 45s | Present at repo root. Not replaced. |
+| [45 second pitch video](45-second-pitch-video.mp4) | Additive v15 extra; filename is Peter's label, not exact 45.000s | PRESENT. ffprobe 42.1s (metadata only). Does not replace `pitch.mp4`. |
 | [report.html](report.html) | Idea, investigation, validation and cultural calendar | Static report with five recording-friendly sections. |
 | `docs/` | Strategy, concept, hook bank, charts and aggregate tables | Supporting evidence. |
 
@@ -133,6 +134,10 @@ disagree, so the exact score is omitted from the video and is not treated as set
 
 ## Status
 
-v11 `demo.mp4` and `pitch.mp4` are present and were **not** remade for One Drop. Content
-approval, organiser clearance, publication, and submission remain **PENDING**. Do not swap
-in v12 or later. Limits, AI-scene labels, and media metadata: [report.html](docs/reel-report.html).
+v11 `demo.mp4` and `pitch.mp4` are present and were **not** remade for One Drop. Extra
+file [45 second pitch video](45-second-pitch-video.mp4) (v15) sits alongside them and
+does **not** replace those originals. ffprobe duration of that extra file is **42.1s**
+(metadata only, not visual/audio QA); the title is a label, not a claim of exact 45.000s.
+Content approval, organiser clearance, publication, and submission remain **PENDING**.
+Do not swap v11 `demo.mp4` / `pitch.mp4` for v12 or later. Limits, AI-scene labels, and
+media metadata: [report.html](docs/reel-report.html).

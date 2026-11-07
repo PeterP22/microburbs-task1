@@ -56,6 +56,8 @@ ALLOWED_FILES = {
     "pitch.mp4",
     "report.html",
     "scripts/verify.py",
+    "45-second-pitch-video.mp4",
+    "ADD_MEDIA_CHECK_PLAN.md",
 }
 FORBIDDEN_PUBLISHED = re.compile(
     r"(API_DATA|\.env$|mb_raw|credential|\.pem$|\.key$)",
@@ -72,6 +74,8 @@ README_PHRASES = [
     "One Drop",
     "Botany",
     "not the subject of the existing",
+    "45 second pitch video",
+    "42.1s",
 ]
 AGENTS_REQUIRED = ["python3 scripts/verify.py", "--allow-pending", "python3 -m http.server"]
 REPORT_HEADINGS = [
@@ -121,6 +125,13 @@ EXPECTED_MEDIA = {
         "sha256": "f322bb0ed0f0cc3abff56e5457c3f9010a64fa7294325712b507406ebb4af9a8",
         "size": 36459899,
         "duration": 45.0,
+        "dur_lo": 0.0,
+        "dur_hi": 45.0,
+    },
+    "45-second-pitch-video.mp4": {
+        "sha256": "e34a6fbbe5e7dd59964631bc4963e0146bd7cc27a84f659d92dfb03d07c94fa9",
+        "size": 30997081,
+        "duration": 42.1,
         "dur_lo": 0.0,
         "dur_hi": 45.0,
     },

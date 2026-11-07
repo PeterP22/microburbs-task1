@@ -9,7 +9,9 @@ can still serve old SHAs; a refs audit is not complete erasure.
 
 Unique producer work on `creator/runclub-reel` (Remotion source and draft videos) is
 retained on that branch. Do not swap canonical root `demo.mp4` / `pitch.mp4` (v11).
-Do not put v12+ or judges-walkthrough into production without approval.
+`45-second-pitch-video.mp4` is an additive v15 extra (Peter's "45 second pitch video"
+label; ffprobe 42.1s). It is not a replacement for v11. Do not put judges-walkthrough
+into production without approval.
 
 Root `demo.mp4` and `pitch.mp4` are reconstructed producer originals. Commit them as
 normal Git blobs, never Git LFS pointers. Final user approval and publication remain
